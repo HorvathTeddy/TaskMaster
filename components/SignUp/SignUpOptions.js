@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet, TextInput } from "react-native";
 
-const LoginOptions = ({ title }) => {
+const SignUpOptions = ({ title }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{title}</Text>
@@ -30,4 +30,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginOptions;
+export default SignUpOptions;

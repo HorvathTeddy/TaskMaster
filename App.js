@@ -1,18 +1,21 @@
 import { StyleSheet, Text, View } from "react-native";
-import Login from "./components/Login/Login";
+import SignUp from "./components/SignUp";
 import CreateAccoutMain from "./components/CreateAccount/CreateAccoutMain";
+import AddTask from "./components/AddTask";
 
 export default function App() {
   const handlePress = () => false;
   return (
     <View style={styles.container}>
-      <CreateAccoutMain></CreateAccoutMain>
-      {/* <Login
+      {/* <CreateAccoutMain></CreateAccoutMain> */}
+      {/* <SignUp
         title="Name"
+        email="Email"
         passwd="Password"
         passwdCon="Confirm password"
         conf="Confirm"
       /> */}
+      <AddTask></AddTask>
     </View>
   );
 }

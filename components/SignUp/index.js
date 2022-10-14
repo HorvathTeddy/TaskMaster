@@ -1,18 +1,13 @@
-import {
-  StyleSheet,
-  TextInput,
-  View,
-  Text,
-  TouchableOpacity,
-} from "react-native";
-import LoginOptions from "./LoginOptions";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import SignUpOptions from "./SignUpOptions";
 
-const Login = ({ title, passwd, passwdCon, conf }) => {
+const SignUp = ({ title, email, passwd, passwdCon, conf }) => {
   return (
     <View style={styles.container}>
-      <LoginOptions title={title} />
-      <LoginOptions title={passwd} />
-      <LoginOptions title={passwdCon} />
+      <SignUpOptions title={title} style={styles.options} />
+      <SignUpOptions title={email} />
+      <SignUpOptions title={passwd} />
+      <SignUpOptions title={passwdCon} />
       <TouchableOpacity style={styles.button}>
         <Text style={styles.text}>{conf}</Text>
       </TouchableOpacity>
@@ -34,6 +29,9 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: "lightblue",
   },
+  options: {
+    width: "50%",
+  },
 });
 
-export default Login;
+export default SignUp;
