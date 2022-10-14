@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   button: {
     alignItems: "center",
     justifyContent: "flex-start",
-    width: "70%",
+    width: "100%",
     marginTop: "10%",
     padding: "5%",
     borderRadius: 5,
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
   text: {
     justifyContent: "center",
-    fontSize: 20,
+    fontSize: 18,
   },
 });
 
