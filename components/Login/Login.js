@@ -23,8 +23,8 @@ const Login = ({ title, passwd, passwdCon, conf }) => {
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    justifyContent: "flex-start",
-    marginTop: "50%",
+    justifyContent: "center",
+    marginTop: "10%",
   },
   button: {
     alignItems: "center",
