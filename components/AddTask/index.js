@@ -6,24 +6,55 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
+import NavBar from "../NavBar";
 
 /*
-This
+This program sets up the task app that AddTask so the tasks are shown all
+in one page for future use all task are drawn from a database dynamiclly to 
+show every task that is available at any given time
 */
 
 const AddTask = () => {
   return (
     <View style={styles.input}>
-      <Text style={styles.tasks}>Tasks</Text>
-      <TextInput style={styles.text}>AddTask</TextInput>
-      <TouchableOpacity>
-        <Text style={styles.addTask}>+</Text>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.taskText}>Task Name</Text>
+        <View style={styles.taskStatus}>
+          <View style={styles.CircleShape} />
+          <View style={styles.CircleShape} />
+          <View style={styles.CircleShape} />
+          <View style={styles.CircleShape} />
+        </View>
       </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  taskText: {
+    fontSize: 24,
+  },
+  taskStatus: {
+    flexDirection: "row",
+    justifyContent: "left",
+  },
+  CircleShape: {
+    margin: 5,
+    width: 20,
+    height: 20,
+    borderRadius: 20 / 2,
+    backgroundColor: "green",
+  },
+  button: {
+    justifyContent: "center",
+    alignItems: "center",
+    paddingLeft: 100,
+    paddingRight: 100,
+    paddingTop: 20,
+    paddingBottom: 20,
+    borderWidth: 2,
+    borderRadius: 10,
+  },
   tasks: {
     fontSize: 40,
     fontWeight: "bold",
@@ -34,10 +65,8 @@ const styles = StyleSheet.create({
   input: {
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "20%",
     height: "15%",
     width: "80%",
-    padding: 10,
   },
   text: {
     justifyContent: "center",

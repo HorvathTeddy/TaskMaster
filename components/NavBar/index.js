@@ -1,29 +1,35 @@
-import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, TouchableOpacity, Text, SafeAreaView } from "react-native";
 import React from "react";
 import { AppleStyle } from "react-native-scrollable-navigation-bar";
 
-const NavBar = () => {
+const NavBar = ({ title }) => {
   return (
-    // <TouchableOpacity style={styles.button}>
-    //   <Text style={styles.text}>{title}</Text>
-    // </TouchableOpacity>
-    <View></View>
+    <SafeAreaView style={styles.navigator}>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.text}>+</Text>
+      </TouchableOpacity>
+      <Text style={styles.textTitle}>Tasks</Text>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  navigator: {
+    flexDirection: "row",
+    backgroundColor: "grey",
+    width: "100%",
+    height: "12%",
+  },
   button: {
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: "10%",
-    padding: "5%",
-    borderRadius: 5,
-    backgroundColor: "lightblue",
+    marginLeft: "5%",
   },
   text: {
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: 20,
+    fontSize: 50,
+  },
+  textTitle: {
+    marginLeft: "24%",
+    fontSize: 45,
+    fontWeight: "bold",
   },
 });
 

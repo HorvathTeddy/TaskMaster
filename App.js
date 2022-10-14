@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import SignUp from "./components/SignUp";
 import CreateAccoutMain from "./components/CreateAccount/CreateAccoutMain";
 import AddTask from "./components/AddTask";
+import NavBar from "./components/NavBar";
 
 export default function App() {
   const handlePress = () => false;
@@ -15,6 +16,7 @@ export default function App() {
         passwdCon="Confirm password"
         conf="Confirm"
       /> */}
+      <NavBar></NavBar>
       <AddTask></AddTask>
     </View>
   );
