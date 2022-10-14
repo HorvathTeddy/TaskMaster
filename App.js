@@ -10,7 +10,8 @@ export default function App() {
         title="Name"
         passwd="Password"
         passwdCon="Confirm password"
-      ></Login>
+        conf="Confirm"
+      />
     </View>
   );
 }

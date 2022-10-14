@@ -5,18 +5,16 @@ import {
   Text,
   TouchableOpacity,
 } from "react-native";
+import LoginOptions from "./LoginOptions";
 
-const Login = ({ title, passwd, passwdCon }) => {
+const Login = ({ title, passwd, passwdCon, conf }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>{title}</Text>
-      <TextInput style={styles.input} />
-      <Text style={styles.label}>{passwd}</Text>
-      <TextInput style={styles.input} />
-      <Text style={styles.label}>{passwdCon}</Text>
-      <TextInput style={styles.input} />
+      <LoginOptions title={title} />
+      <LoginOptions title={passwd} />
+      <LoginOptions title={passwdCon} />
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.text}>Confirm</Text>
+        <Text style={styles.text}>{conf}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -24,22 +22,9 @@ const Login = ({ title, passwd, passwdCon }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "flex-start",
-    marginTop: "40%",
-  },
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    marginBottom: "25%",
-  },
-  label: {
-    justifyContent: "center",
-    fontSize: 18,
+    marginTop: "50%",
   },
   button: {
     alignItems: "center",
@@ -48,10 +33,6 @@ const styles = StyleSheet.create({
     padding: "5%",
     borderRadius: 5,
     backgroundColor: "lightblue",
-  },
-  text: {
-    justifyContent: "center",
-    fontSize: 18,
   },
 });
 
