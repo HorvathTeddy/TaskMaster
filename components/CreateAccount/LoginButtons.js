@@ -6,6 +6,7 @@ const LoginButtons = ({ title }) => {
     <TouchableOpacity style={styles.button}>
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
+    // </div>
   );
 };
 
@@ -13,7 +14,7 @@ const styles = StyleSheet.create({
   button: {
     alignItems: "center",
     justifyContent: "center",
-    width: "50%",
+    width: "70%",
     marginTop: "10%",
     padding: "5%",
     borderRadius: 5,
