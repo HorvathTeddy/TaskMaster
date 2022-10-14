@@ -1,11 +1,16 @@
 import { StyleSheet, Text, View } from "react-native";
-import CreateAccoutMain from "./components/CreateAccount/CreateAccoutMain";
+import Login from "./components/Login/Login";
 
 export default function App() {
   const handlePress = () => false;
   return (
     <View style={styles.container}>
-      <CreateAccoutMain></CreateAccoutMain>
+      {/* <CreateAccoutMain></CreateAccoutMain> */}
+      <Login
+        title="Name"
+        passwd="Password"
+        passwdCon="Confirm password"
+      ></Login>
     </View>
   );
 }

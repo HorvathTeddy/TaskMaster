@@ -1,6 +1,6 @@
 import { Text, StyleSheet, View } from "react-native";
 import React, { Component } from "react";
-import StandardButton from "./CreateAccountButtons";
+import CreateAccountButtons from "./CreateAccountButtons";
 import LoginButtons from "./LoginButtons";
 import { StatusBar } from "expo-status-bar";
 
@@ -9,8 +9,8 @@ export default class CreateAccoutMain extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>Welcome to TaskMaster</Text>
-        <StandardButton title="Create Manager Account"></StandardButton>
-        <StandardButton title="Create Employee Account"></StandardButton>
+        <CreateAccountButtons title="Create Manager Account"></CreateAccountButtons>
+        <CreateAccountButtons title="Create Employee Account"></CreateAccountButtons>
         <Text style={styles.loginText}>Already have an account?</Text>
         <LoginButtons title="Login"></LoginButtons>
         <StatusBar style="auto" />
