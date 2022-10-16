@@ -1,8 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
 import SignUp from "./components/SignUp";
 import CreateAccoutMain from "./components/CreateAccount/CreateAccoutMain";
-import AddTask from "./components/AddTask";
+import Task from "./components/Task";
 import NavBar from "./components/NavBar";
+import AddTask from "./components/Task/AddTask";
 
 export default function App() {
   const handlePress = () => false;
@@ -17,6 +18,7 @@ export default function App() {
         conf="Confirm"
       /> */}
       <NavBar></NavBar>
+      {/* <Task></Task> */}
       <AddTask></AddTask>
     </View>
   );

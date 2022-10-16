@@ -1,20 +1,13 @@
-import {
-  View,
-  Text,
-  TextInput,
-  StyleSheet,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
-import NavBar from "../NavBar";
 
 /*
-This program sets up the task app that AddTask so the tasks are shown all
+This program sets up the task app that Task so the tasks are shown all
 in one page for future use all task are drawn from a database dynamiclly to 
 show every task that is available at any given time
 */
 
-const AddTask = () => {
+const Task = () => {
   return (
     <View style={styles.input}>
       <TouchableOpacity style={styles.button}>
@@ -64,7 +57,6 @@ const styles = StyleSheet.create({
   },
   input: {
     justifyContent: "center",
-    alignItems: "center",
     height: "15%",
     width: "80%",
   },
@@ -79,4 +71,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddTask;
+export default Task;
