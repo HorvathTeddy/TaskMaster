@@ -6,8 +6,8 @@ const AddTask = () => {
   return (
     <View style={styles.container}>
       <Entry title="Task Name"></Entry>
-      <Entry title="Task Due Date"></Entry>
-      <Entry title="potato"></Entry>
+      <Entry title="Due Date"></Entry>
+      <Entry title="Note"></Entry>
       <Entry title="ice cream"></Entry>
       {/* <DatePicker /> */}
     </View>

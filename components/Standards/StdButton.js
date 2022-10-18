@@ -1,12 +1,15 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
 
 const StdButton = ({ title }) => {
   return (
-    <TouchableOpacity style={styles.button}>
-      <Text style={styles.text}>{title}</Text>
-    </TouchableOpacity>
+    <NavigationContainer>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.text}>{title}</Text>
+      </TouchableOpacity>
+    </NavigationContainer>
   );
 };
 

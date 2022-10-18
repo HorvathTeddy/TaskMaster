@@ -9,7 +9,7 @@ export default function App() {
   const handlePress = () => false;
   return (
     <View style={styles.container}>
-      <CreateAccoutMain></CreateAccoutMain>
+      {/* <CreateAccoutMain></CreateAccoutMain> */}
       {/* <SignUp
         title="Name"
         email="Email"
@@ -17,9 +17,9 @@ export default function App() {
         passwdCon="Confirm password"
         conf="Confirm"
       /> */}
-      {/* <NavBar></NavBar> */}
-      {/* <Task></Task> */}
-      {/* <AddTask></AddTask> */}
+      <NavBar></NavBar>
+      {/* <Task dueDate="hi"></Task> */}
+      <AddTask></AddTask>
     </View>
   );
 }

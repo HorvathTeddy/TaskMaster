@@ -7,11 +7,12 @@ in one page for future use all task are drawn from a database dynamiclly to
 show every task that is available at any given time
 */
 
-const Task = () => {
+const Task = ({ dueDate }) => {
   return (
     <View style={styles.input}>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.taskText}>Task Name</Text>
+        <Text style={styles.taskText}>Due Date: {dueDate}</Text>
         <View style={styles.taskStatus}>
           <View style={styles.CircleShape} />
           <View style={styles.CircleShape} />
