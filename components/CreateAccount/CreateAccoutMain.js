@@ -10,6 +10,7 @@ export default class CreateAccoutMain extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <Text style={styles.text}>Welcome to TaskMaster</Text>
+        <StdButton title="Create Business Account"></StdButton>
         <StdButton title="Create Manager Account"></StdButton>
         <StdButton title="Create Employee Account"></StdButton>
         <Text style={styles.loginText}>Already have an account?</Text>

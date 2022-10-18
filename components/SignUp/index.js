@@ -1,11 +1,15 @@
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import SignUpOptions from "./SignUpOptions";
 
-const SignUp = ({ title, email, passwd, passwdCon, conf }) => {
+const SignUp = ({ name, email, passwd, passwdCon, conf }) => {
   return (
     <View style={styles.container}>
-      <SignUpOptions title={title} style={styles.options} />
+      <Text title="Sign Up" style={styles.titleName}>
+        Sign Up
+      </Text>
+      <SignUpOptions title={name} style={styles.options} />
       <SignUpOptions title={email} />
+      <SignUpOptions title="Company Name" />
       <SignUpOptions title={passwd} />
       <SignUpOptions title={passwdCon} />
       <TouchableOpacity style={styles.button}>
@@ -20,9 +24,13 @@ const styles = StyleSheet.create({
     marginTop: "20%",
     width: "80%",
   },
+  titleName: {
+    fontSize: 30,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
   button: {
     alignItems: "center",
-    justifyContent: "flex-start",
     marginTop: "10%",
     padding: "5%",
     borderRadius: 5,

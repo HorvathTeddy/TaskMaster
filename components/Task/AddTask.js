@@ -1,6 +1,7 @@
 import { View, StyleSheet } from "react-native";
 import React from "react";
 import Entry from "./Entry";
+import StdButton from "../Standards/StdButton";
 
 const AddTask = () => {
   return (
@@ -9,15 +10,19 @@ const AddTask = () => {
       <Entry title="Due Date"></Entry>
       <Entry title="Note"></Entry>
       <Entry title="ice cream"></Entry>
-      {/* <DatePicker /> */}
+      <View style={styles.addTask}>
+        <StdButton title="Add Task" />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: "10%",
     width: "80%",
+  },
+  addTask: {
+    alignItems: "center",
   },
 });
 

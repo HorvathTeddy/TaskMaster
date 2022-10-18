@@ -11,7 +11,7 @@ export default function App() {
     <View style={styles.container}>
       {/* <CreateAccoutMain></CreateAccoutMain> */}
       {/* <SignUp
-        title="Name"
+        name="Name"
         email="Email"
         passwd="Password"
         passwdCon="Confirm password"

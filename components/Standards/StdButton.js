@@ -5,19 +5,19 @@ import { NavigationContainer } from "@react-navigation/native";
 
 const StdButton = ({ title }) => {
   return (
-    <NavigationContainer>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.text}>{title}</Text>
-      </TouchableOpacity>
-    </NavigationContainer>
+    // <NavigationContainer>
+    <TouchableOpacity style={styles.button}>
+      <Text style={styles.text}>{title}</Text>
+    </TouchableOpacity>
+    // </NavigationContainer>
   );
 };
 
 const styles = StyleSheet.create({
   button: {
-    width: "60%",
+    width: "80%",
     alignItems: "center",
-    justifyContent: "flex-start",
+    // justifyContent: "flex-start",
     marginTop: "10%",
     padding: "5%",
     borderRadius: 5,
