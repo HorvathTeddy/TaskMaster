@@ -1,4 +1,4 @@
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import React from "react";
 import Entry from "./Entry";
 
@@ -9,6 +9,7 @@ const AddTask = () => {
       <Entry title="Task Due Date"></Entry>
       <Entry title="potato"></Entry>
       <Entry title="ice cream"></Entry>
+      {/* <DatePicker /> */}
     </View>
   );
 };

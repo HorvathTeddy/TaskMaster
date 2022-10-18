@@ -17,9 +17,8 @@ const SignUp = ({ title, email, passwd, passwdCon, conf }) => {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: "10%",
+    marginTop: "20%",
+    width: "80%",
   },
   button: {
     alignItems: "center",
@@ -30,7 +29,7 @@ const styles = StyleSheet.create({
     backgroundColor: "lightblue",
   },
   options: {
-    width: "50%",
+    width: "80%",
   },
 });
 
