@@ -27,9 +27,9 @@ const SignUpRoot = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: "10%",
-    alignItems: "center",
+    margin: "10%",
     justifyContent: "space-between",
+    alingItems: "center",
   },
   titleName: {
     fontSize: 30,
@@ -49,11 +49,13 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 28,
     fontWeight: "bold",
+    textAlign: "center",
   },
   textLogin: {
     marginTop: "50%",
     fontSize: 20,
     fontWeight: "bold",
+    textAlign: "center",
   },
 });
 

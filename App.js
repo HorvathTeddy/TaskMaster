@@ -12,13 +12,6 @@ export default function App() {
   return (
     <NavigationContainer style={styles.container}>
       <CreateAccount></CreateAccount>
-      {/* <SignUp
-        name="Name"
-        email="Email"
-        passwd="Password"
-        passwdCon="Confirm password"
-        conf="Confirm"
-      /> */}
       {/* <NavBar></NavBar> */}
       {/* <View style={styles.scrollview}>
         <ScrollView>
