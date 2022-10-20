@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 import SignUp from "./Views/SignUp";
 import CreateAccount from "./Views/CreateAccount/CreateAccount";
-import Task from "./components/Task";
-import NavBar from "./components/NavBar";
-import AddTask from "./components/Task/AddTask";
-import { ScrollView } from "react-native";
+// import Task from "./Views/Task";
+// import NavBar from "./components/NavBar";
+// import AddTask from "./Views/Task/AddTask";
+// import { ScrollView } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 
 export default function App() {
