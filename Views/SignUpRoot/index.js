@@ -11,23 +11,25 @@ const SignUpRoot = ({ navigation }) => {
         title="Business"
         onPress={() => navigation.navigate("Business")}
       />
-      <StdButton title="Manager" />
-      <StdButton title="Employee" />
-      <Text /*style={styles.loginText}*/>Already have an account?</Text>
-      <StdAlert
-        mainAlert="Are your sure?"
-        secondAlert="Are you sure you want to remove this beautiful box?"
-        title="Login"
+      <StdButton
+        title="Manager"
+        onPress={() => navigation.navigate("Manager")}
       />
-      {/* <StdButton title="Login"></StdButton> */}
+      <StdButton
+        title="Employee"
+        onPress={() => navigation.navigate("Employee")}
+      />
+      <Text style={styles.textLogin}>Already have an account?</Text>
+      <StdButton title="Login" onPress={() => navigation.navigate("Login")} />
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: "20%",
-    width: "80%",
+    marginTop: "10%",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   titleName: {
     fontSize: 30,
@@ -43,6 +45,15 @@ const styles = StyleSheet.create({
   },
   options: {
     width: "80%",
+  },
+  text: {
+    fontSize: 28,
+    fontWeight: "bold",
+  },
+  textLogin: {
+    marginTop: "50%",
+    fontSize: 20,
+    fontWeight: "bold",
   },
 });
 
