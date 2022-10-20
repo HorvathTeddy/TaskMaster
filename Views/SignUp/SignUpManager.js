@@ -1,14 +1,17 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import SignUpOptions from "./SignUpOptions";
 import StdButton from "../../components/Standards/StdButton";
+import { ScrollView } from "react-native";
 
-const SignUpBusiness = ({ navigation }) => {
+// This view alows
+
+const SignUpManager = ({ navigation }) => {
   return (
     <ScrollView>
       <View style={styles.container}>
         <Text title="Sign Up" style={styles.titleName}>
-          Sign Up
+          Manager
         </Text>
         <SignUpOptions title={"Name"} style={styles.options} />
         <SignUpOptions title={"Email"} />
@@ -16,6 +19,11 @@ const SignUpBusiness = ({ navigation }) => {
         <SignUpOptions title="Verification Code" />
         <SignUpOptions title={"Password"} />
         <SignUpOptions title={"Password Confirmation"} />
+        {/* 
+      This button needs to go to the task page. 
+      task page may need to 
+      be redone. 
+      */}
         <StdButton title={"Sign Up"} />
       </View>
     </ScrollView>
@@ -45,4 +53,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignUpBusiness;
+export default SignUpManager;

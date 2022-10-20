@@ -6,12 +6,13 @@ import NavBar from "./components/NavBar";
 // import AddTask from "./Views/Task/AddTask";
 import { ScrollView } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
+import LoginStack from "./Views/StackManager/LoginStack";
 
 export default function App() {
   const handlePress = () => false;
   return (
     <NavigationContainer style={styles.container}>
-      <CreateAccount></CreateAccount>
+      <LoginStack></LoginStack>
       {/* <NavBar></NavBar> */}
       {/* <View style={styles.scrollview}>
         <ScrollView>

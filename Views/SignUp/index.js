@@ -2,6 +2,8 @@ import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import StdButton from "../../components/Standards/StdButton";
 import SignUpOptions from "./SignUpOptions";
 
+// no longer needed not deleting just yet as a template
+
 const SignUp = (props) => {
   return (
     <View style={styles.container}>

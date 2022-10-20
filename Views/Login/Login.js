@@ -1,17 +1,25 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
-import SignUpOptions from "../SignUp/SignUpOptions";
 import StdButton from "../../components/Standards/StdButton";
 
-const Login = () => {
+const Login = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text title="Login" style={styles.titleName}>
         Login
       </Text>
-      <StdButton title={"Business"} />
-      <StdButton title={"Manager"} />
-      <StdButton title={"employee"} />
+      <StdButton
+        title="Business"
+        onPress={() => navigation.navigate("Login Business")}
+      />
+      <StdButton
+        title="Manager"
+        onPress={() => navigation.navigate("Login Manager")}
+      />
+      <StdButton
+        title="Employee"
+        onPress={() => navigation.navigate("Login Employee")}
+      />
     </View>
   );
 };

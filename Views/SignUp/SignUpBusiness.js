@@ -3,17 +3,25 @@ import React from "react";
 import SignUpOptions from "./SignUpOptions";
 import StdButton from "../../components/Standards/StdButton";
 
+// This View allows users to sign up their business in order to create their
+// companies account to get started
+
 const SignUpBusiness = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text title="Sign Up" style={styles.titleName}>
-        Sign Up
+        Business
       </Text>
       <SignUpOptions title={"Name"} style={styles.options} />
       <SignUpOptions title={"Email"} />
       <SignUpOptions title="Company Name" />
       <SignUpOptions title={"Password"} />
       <SignUpOptions title={"Password Confirmation"} />
+      {/* 
+      This button needs to go to the task page. 
+      task page may need to 
+      be redone. 
+      */}
       <StdButton title={"Sign Up"} />
     </View>
   );

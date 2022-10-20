@@ -1,6 +1,9 @@
 import React from "react";
 import { View, Text, TextInput, StyleSheet } from "react-native";
 
+// App standard Input that can be used anywhere as a component
+// Takes a title for the standard title of the input
+
 const StdInputs = ({ title }) => {
   return (
     <View style={styles.container}>
