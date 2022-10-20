@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
-import NavBar from "../NavBar";
+import NavBar from "../../components/NavBar";
 
 /*
 This program sets up the task app that Task so the tasks are shown all
