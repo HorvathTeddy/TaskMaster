@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
+import NavBar from "../NavBar";
 
 /*
 This program sets up the task app that Task so the tasks are shown all
@@ -10,6 +11,7 @@ show every task that is available at any given time
 const Task = ({ dueDate }) => {
   return (
     <View style={styles.input}>
+      {/* <NavBar></NavBar> */}
       <TouchableOpacity style={styles.button}>
         <Text style={styles.taskText}>Task Name</Text>
         <Text style={styles.taskText}>Due Date: {dueDate}</Text>

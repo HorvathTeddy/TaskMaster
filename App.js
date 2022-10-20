@@ -1,14 +1,16 @@
 import { StyleSheet, Text, View } from "react-native";
-import SignUp from "./components/SignUp";
-import CreateAccount from "./components/CreateAccount/CreateAccount";
+import SignUp from "./Views/SignUp";
+import CreateAccount from "./Views/CreateAccount/CreateAccount";
 import Task from "./components/Task";
 import NavBar from "./components/NavBar";
 import AddTask from "./components/Task/AddTask";
+import { ScrollView } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
 
 export default function App() {
   const handlePress = () => false;
   return (
-    <View style={styles.container}>
+    <NavigationContainer style={styles.container}>
       <CreateAccount></CreateAccount>
       {/* <SignUp
         name="Name"
@@ -18,17 +20,24 @@ export default function App() {
         conf="Confirm"
       /> */}
       {/* <NavBar></NavBar> */}
-      {/* <Task dueDate="hi"></Task> */}
+      {/* <View style={styles.scrollview}>
+        <ScrollView>
+          <Task dueDate="hi"></Task>
+        </ScrollView>
+      </View> */}
       {/* <AddTask></AddTask> */}
-    </View>
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "flex-start",
+    justifyContent: "stretch",
+  },
+  scrollview: {
+    width: "80%",
+    height: "20%",
   },
 });

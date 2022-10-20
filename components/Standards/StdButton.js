@@ -14,7 +14,7 @@ const StdButton = ({ title, onPress }) => {
 
 const styles = StyleSheet.create({
   button: {
-    width: "80%",
+    // width: "80%",
     alignItems: "center",
     marginTop: "10%",
     padding: "5%",

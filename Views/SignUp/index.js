@@ -1,20 +1,19 @@
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import StdButton from "../../components/Standards/StdButton";
 import SignUpOptions from "./SignUpOptions";
 
-const SignUp = ({ name, email, passwd, passwdCon, conf }) => {
+const SignUp = (props) => {
   return (
     <View style={styles.container}>
       <Text title="Sign Up" style={styles.titleName}>
         Sign Up
       </Text>
-      <SignUpOptions title={name} style={styles.options} />
-      <SignUpOptions title={email} />
+      <SignUpOptions title={"name"} style={styles.options} />
+      <SignUpOptions title={"email"} />
       <SignUpOptions title="Company Name" />
-      <SignUpOptions title={passwd} />
-      <SignUpOptions title={passwdCon} />
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.text}>{conf}</Text>
-      </TouchableOpacity>
+      <SignUpOptions title={"passwd"} />
+      <SignUpOptions title={"passwdCon"} />
+      <StdButton title={"conf"} />
     </View>
   );
 };
