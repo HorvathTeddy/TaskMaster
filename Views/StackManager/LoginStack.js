@@ -7,6 +7,7 @@ import SignUpEmployee from "../SignUp/SignUpEmployee";
 import Login from "../Login/Login";
 import LoginBusiness from "../Login/LoginBusiness";
 import LoginManager from "../Login/LoginManager";
+import LoginEmployee from "../Login/LoginEmployee";
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ const LoginStack = (props) => {
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Login Business" component={LoginBusiness} />
       <Stack.Screen name="Login Manager" component={LoginManager} />
+      <Stack.Screen name="Login Employee" component={LoginEmployee} />
     </Stack.Navigator>
   );
 };
