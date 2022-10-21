@@ -9,7 +9,7 @@ import { ScrollView } from "react-native";
 
 const SignUpEmployee = ({ navigation }) => {
   return (
-    <ScrollView>
+    <ScrollView alwaysBounceVertical={false}>
       <View style={styles.container}>
         <Text title="Sign Up" style={styles.titleName}>
           Employee

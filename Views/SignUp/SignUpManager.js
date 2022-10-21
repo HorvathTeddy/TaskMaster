@@ -4,11 +4,12 @@ import SignUpOptions from "./SignUpOptions";
 import StdButton from "../../components/Standards/StdButton";
 import { ScrollView } from "react-native";
 
-// This view alows
+// This View allows users to sign up their manager in order to create their
+// companies account to get started
 
 const SignUpManager = ({ navigation }) => {
   return (
-    <ScrollView>
+    <ScrollView alwaysBounceVertical={false}>
       <View style={styles.container}>
         <Text title="Sign Up" style={styles.titleName}>
           Manager

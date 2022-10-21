@@ -9,16 +9,16 @@ import { ScrollView } from "react-native";
 
 const SignUpBusiness = ({ navigation }) => {
   return (
-    <ScrollView>
+    <ScrollView alwaysBounceVertical={false}>
       <View style={styles.container}>
         <Text title="Sign Up" style={styles.titleName}>
           Business
         </Text>
-        <SignUpOptions title={"Name"} style={styles.options} />
-        <SignUpOptions title={"Email"} />
+        <SignUpOptions title="Name" style={styles.options} />
+        <SignUpOptions title="Email" />
         <SignUpOptions title="Company Name" />
-        <SignUpOptions title={"Password"} />
-        <SignUpOptions title={"Password Confirmation"} />
+        <SignUpOptions title="Password" />
+        <SignUpOptions title="Password Confirmation" />
         {/* 
       This button needs to go to the task page. 
       task page may need to 
