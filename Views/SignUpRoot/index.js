@@ -1,33 +1,49 @@
 import { View, Text, SafeAreaView, StyleSheet } from "react-native";
 import React from "react";
 import StdButton from "../../components/Standards/StdButton";
-import StdAlert from "../../components/Standards/StdAlert";
+
+/*
+    This View is a root for the sign up pages
+    taking navigation as an argument and passing it to the rest of the code
+    to set up the different views withing the Stack.Navigator
+*/
 
 const SignUpRoot = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.text}>Welcome to Tasks-R-Us</Text>
+      <Text style={styles.createAccount}>Create Account</Text>
       <StdButton
         title="Business"
+        // navigation.navigate is how the navigator jumps from each screen
+        // to the next
         onPress={() => navigation.navigate("Business")}
       />
-      <StdButton title="Manager" />
-      <StdButton title="Employee" />
-      <Text /*style={styles.loginText}*/>Already have an account?</Text>
-      <StdAlert
-        mainAlert="Are your sure?"
-        secondAlert="Are you sure you want to remove this beautiful box?"
-        title="Login"
+      <StdButton
+        title="Manager"
+        // navigation.navigate is how the navigator jumps from each screen
+        // to the next
+        onPress={() => navigation.navigate("Manager")}
       />
-      {/* <StdButton title="Login"></StdButton> */}
+      <StdButton
+        title="Employee"
+        // navigation.navigate is how the navigator jumps from each screen
+        // to the next
+        onPress={() => navigation.navigate("Employee")}
+      />
+      <Text style={styles.textLogin}>Already have an account?</Text>
+      {/* navigation.navigate is how the navigator jumps from each screen // to
+      the next */}
+      <StdButton title="Login" onPress={() => navigation.navigate("Login")} />
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: "20%",
-    width: "80%",
+    margin: "10%",
+    justifyContent: "space-between",
+    alingItems: "center",
   },
   titleName: {
     fontSize: 30,
@@ -43,6 +59,23 @@ const styles = StyleSheet.create({
   },
   options: {
     width: "80%",
+  },
+  text: {
+    fontSize: 28,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  createAccount: {
+    marginTop: "10%",
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  textLogin: {
+    marginTop: "50%",
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
   },
 });
 

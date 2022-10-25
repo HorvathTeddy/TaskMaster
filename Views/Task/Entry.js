@@ -1,5 +1,5 @@
 import React from "react";
-import StdInputs from "../Standards/StdInputs";
+import StdInputs from "../../components/Standards/StdInputs";
 
 const Entry = ({ title }) => {
   return <StdInputs title={title}></StdInputs>;

@@ -1,30 +1,24 @@
 import { StyleSheet, Text, View } from "react-native";
-import SignUp from "./Views/SignUp";
-import CreateAccount from "./Views/CreateAccount/CreateAccount";
-// import Task from "./Views/Task";
-// import NavBar from "./components/NavBar";
-// import AddTask from "./Views/Task/AddTask";
-// import { ScrollView } from "react-native";
+
 import { NavigationContainer } from "@react-navigation/native";
+import LoginStack from "./Views/StackManager/LoginStack";
+import NavBar from "./components/NavBar";
+import Task from "./Views/Task/Task";
+import AddTask from "./Views/Task/AddTask";
+import TaskStack from "./Views/StackManager/TaskStack";
 
 export default function App() {
   const handlePress = () => false;
   return (
     <NavigationContainer style={styles.container}>
-      <CreateAccount></CreateAccount>
-      {/* <SignUp
-        name="Name"
-        email="Email"
-        passwd="Password"
-        passwdCon="Confirm password"
-        conf="Confirm"
-      /> */}
+      <LoginStack></LoginStack>
       {/* <NavBar></NavBar> */}
-      {/* <View style={styles.scrollview}>
-        <ScrollView>
-          <Task dueDate="hi"></Task>
-        </ScrollView>
-      </View> */}
+      {/* <View> */}
+      {/* <ScrollView style={styles.scrollview}> */}
+      {/* <Task dueDate="hi"></Task> */}
+      {/* <TaskStack></TaskStack> */}
+      {/* </ScrollView> */}
+      {/* </View> */}
       {/* <AddTask></AddTask> */}
     </NavigationContainer>
   );

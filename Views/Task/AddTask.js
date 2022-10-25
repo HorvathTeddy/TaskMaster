@@ -1,9 +1,9 @@
 import { View, StyleSheet } from "react-native";
 import React from "react";
 import Entry from "./Entry";
-import StdButton from "../Standards/StdButton";
+import StdButton from "../../components/Standards/StdButton";
 
-const AddTask = () => {
+const AddTask = (navigate) => {
   return (
     <View style={styles.container}>
       <Entry title="Task Name"></Entry>
