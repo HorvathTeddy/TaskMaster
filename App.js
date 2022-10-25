@@ -11,12 +11,12 @@ export default function App() {
   const handlePress = () => false;
   return (
     <NavigationContainer style={styles.container}>
-      <LoginStack></LoginStack>
+      {/* <LoginStack></LoginStack> */}
       {/* <NavBar></NavBar> */}
       {/* <View> */}
       {/* <ScrollView style={styles.scrollview}> */}
       {/* <Task dueDate="hi"></Task> */}
-      {/* <TaskStack></TaskStack> */}
+      <TaskStack></TaskStack>
       {/* </ScrollView> */}
       {/* </View> */}
       {/* <AddTask></AddTask> */}

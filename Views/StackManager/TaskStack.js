@@ -13,7 +13,7 @@ const TaskStack = (props) => {
       initialRouteName="TaskRoot"
       screenOptions={{
         headerStyle: {
-          backgroundColor: "gray",
+          // backgroundColor: "gray",
         },
         headerTitleStyle: { fontSize: 30, fontWeight: "bold" },
       }}
@@ -21,18 +21,13 @@ const TaskStack = (props) => {
       <Stack.Screen
         name="Tasks"
         component={TaskRoot}
-        options={{
+        options={({ navigation }) => ({
           headerLeft: () => (
-            <TouchableOpacity
-              onPress={() => {
-                // navigation: AddTask,
-                // navigation.navigate("Add Task");
-              }}
-            >
+            <TouchableOpacity onPress={() => navigation.navigate("Add Task")}>
               <Text style={styles.plus}>+</Text>
             </TouchableOpacity>
           ),
-        }}
+        })}
       />
       <Stack.Screen name="Add Task" component={AddTask} />
     </Stack.Navigator>
