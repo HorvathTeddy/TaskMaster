@@ -3,7 +3,7 @@ import React from "react";
 import Entry from "./Entry";
 import StdButton from "../../components/Standards/StdButton";
 
-const AddTask = (navigate) => {
+const AddTask = (navigation) => {
   return (
     <View style={styles.container}>
       <Entry title="Task Name"></Entry>
@@ -11,7 +11,10 @@ const AddTask = (navigate) => {
       <Entry title="Note"></Entry>
       <Entry title="ice cream"></Entry>
       <View style={styles.addTask}>
-        <StdButton title="Add Task" />
+        <StdButton
+          title="Add Task"
+          onPress={() => navigation.navigate("TaskRoot")}
+        />
       </View>
     </View>
   );
@@ -19,10 +22,11 @@ const AddTask = (navigate) => {
 
 const styles = StyleSheet.create({
   container: {
+    alignSelf: "center",
     width: "80%",
   },
   addTask: {
-    alignItems: "center",
+    // alignItems: "center",
   },
 });
 
