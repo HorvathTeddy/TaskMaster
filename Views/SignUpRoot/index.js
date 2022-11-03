@@ -11,7 +11,7 @@ import StdButton from "../../components/Standards/StdButton";
 const SignUpRoot = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>Welcome to Tasks-R-Us</Text>
+      {/* <Text style={styles.text}>Welcome to Tasks-R-Us</Text> */}
       <Text style={styles.createAccount}>Create Account</Text>
       <StdButton
         title="Business"
