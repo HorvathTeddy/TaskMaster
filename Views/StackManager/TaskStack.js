@@ -1,6 +1,5 @@
 import { Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
-import Task from "../Task/Task";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import TaskRoot from "../Task/TaskRoot";
 import AddTask from "../Task/AddTask";
@@ -36,7 +35,7 @@ const TaskStack = (props) => {
 
 const styles = StyleSheet.create({
   plus: {
-    marginTop: -15,
+    // marginTop: '-15px',
     fontSize: 40,
   },
 });

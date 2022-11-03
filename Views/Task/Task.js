@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   },
   taskStatus: {
     flexDirection: "row",
-    justifyContent: "left",
+    // justifyContent: "left",
   },
   circleShape: {
     margin: 5,
