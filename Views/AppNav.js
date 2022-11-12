@@ -5,6 +5,7 @@ import TaskStack from "../Views/StackManager/TaskStack";
 import { NavigationContainer } from "@react-navigation/native";
 import { AuthContext } from '../context/AuthContext';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import TaskCalendar from '../components/TaskCalendar'
 
 const Tab = createBottomTabNavigator();
 
@@ -21,6 +22,7 @@ const AppNav = () => {
        { userToken !== null ? 
         <Tab.Navigator>
           <Tab.Screen name="Home" component={TaskStack} />
+          <Tab.Screen name="Calendar" component={TaskCalendar} />
         </Tab.Navigator>
        :  <LoginStack />}
     {/* <TaskStack></TaskStack> */}
