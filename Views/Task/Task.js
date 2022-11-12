@@ -13,7 +13,11 @@ const Task = ({ dueDate, taskName }) => {
       <TouchableOpacity style={styles.button}>
         <Text style={styles.taskText}>Task Name: {taskName}</Text>
         <Text style={styles.taskText}>Due Date: {dueDate}</Text>
+        <Text style={styles.taskText}>Note: {dueDate}</Text>
         <View style={styles.taskStatus}>
+          {
+            
+          }
           <View style={styles.circleShape} />
           <View style={styles.circleShape} />
           <View style={styles.circleShape} />

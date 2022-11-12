@@ -4,6 +4,7 @@ import Task from "./Task";
 
 const TaskRoot = () => {
   return (
+    <>
     <ScrollView style={styles.scrollView}>
       <Task taskName={"Something"} />
       <Task taskName={"Something"} dueDate={"22/10/2022"} />
@@ -14,6 +15,7 @@ const TaskRoot = () => {
       <Task taskName={"Something"} />
       <Task taskName={"Something"} />
     </ScrollView>
+    </>
   );
 };
 

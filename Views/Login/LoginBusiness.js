@@ -1,14 +1,16 @@
 import { View, StyleSheet } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import StdButton from "../../components/Standards/StdButton";
 import StdInputs from "../../components/Standards/StdInputs";
+import { AuthContext } from '../../context/AuthContext'
 
 const LoginBusiness = () => {
+  const {login} = useContext(AuthContext)
   return (
     <View style={styles.loginContainer}>
       <StdInputs title={"Email"} />
       <StdInputs title={"Password"} />
-      <StdButton title={"Login"} />
+      <StdButton title={"Login"} onPress={() => {login()}} />
     </View>
   );
 };

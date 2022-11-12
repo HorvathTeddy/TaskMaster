@@ -17,6 +17,7 @@ const Stack = createNativeStackNavigator();
 
 const LoginStack = (props) => {
   return (
+  
     <Stack.Navigator initialRouteName="SignUpRoot">
       <Stack.Screen name="Sign Up" component={SignUpRoot} />
       <Stack.Screen name="Business" component={SignUpBusiness} />
@@ -26,7 +27,8 @@ const LoginStack = (props) => {
       <Stack.Screen name="Login Business" component={LoginBusiness} />
       <Stack.Screen name="Login Manager" component={LoginManager} />
       <Stack.Screen name="Login Employee" component={LoginEmployee} />
-    </Stack.Navigator>
+    </Stack.Navigator> 
+    
   );
 };
 

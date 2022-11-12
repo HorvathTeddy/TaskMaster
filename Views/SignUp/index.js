@@ -1,47 +1,76 @@
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import StdButton from "../../components/Standards/StdButton";
-import SignUpOptions from "./SignUpOptions";
-
-// no longer needed not deleting just yet as a template
-
-const SignUp = (props) => {
-  return (
-    <View style={styles.container}>
-      <Text title="Sign Up" style={styles.titleName}>
-        Sign Up
-      </Text>
-      <SignUpOptions title={"name"} style={styles.options} />
-      <SignUpOptions title={"email"} />
-      <SignUpOptions title="Company Name" />
-      <SignUpOptions title={"passwd"} />
-      <SignUpOptions title={"passwdCon"} />
-      <StdButton title={"conf"} />
-    </View>
-  );
-};
+import React, { useState } from 'react'
+import { Text, View, StyleSheet } from "react-native"
+import TextBox from "../components/TextBox"
+import Btn from "../components/Btn"
+import firebase from 'firebase/app';
+import "firebase/auth";
+import "firebase/firestore";
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: "20%",
-    width: "80%",
-    // alignItems: "center",
-    // justifyContent: "center",
-  },
-  titleName: {
-    fontSize: 30,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  button: {
-    alignItems: "center",
-    marginTop: "10%",
-    padding: "5%",
-    borderRadius: 5,
-    backgroundColor: "lightblue",
-  },
-  options: {
-    width: "80%",
-  },
-});
+    view: {
+        flex: 1,
+        width: "100%",
+        justifyContent: "center",
+        alignItems: "center"
+    }
+})
 
-export default SignUp;
+export default function SignUp({ navigation }) {
+
+//     const auth = firebase.auth;
+//     const firestore = firebase.firestore;
+
+//     const [values, setValues] = useState({
+//         name: "",
+//         role: "",
+//         email: "",
+//         pwd: "",
+//         pwd2: ""
+//     })
+
+//     function handleChange(text, eventName) {
+//         setValues(prev => {
+//             return {
+//                 ...prev,
+//                 [eventName]: text
+//             }
+//         })
+//     }
+
+//     function SignUp() {
+
+//         const { email, pwd, pwd2, name, role } = values
+
+//         if (pwd == pwd2) {
+//             auth().createUserWithEmailAndPassword(email, pwd)
+//                 .then(() => {
+//                     firestore().collection("users").doc(auth().currentUser.uid).set({
+//                         uid: auth().currentUser.uid,
+//                         name,
+//                         role,
+//                         email
+//                     })
+//                 })
+//                 .catch((error) => {
+//                     alert(error.message)
+//                     // ..
+//                 });
+//         } else {
+//             alert("Passwords are different!")
+//         }
+//     }
+
+    return <View style={styles.view}>
+        <Text style={{ fontSize: 34, fontWeight: "800", marginBottom: 20 }}>Sign Up</Text>
+        <TextBox placeholder="Full Name" onChangeText={text => handleChange(text, "name")} />
+        <TextBox placeholder="Email Address" onChangeText={text => handleChange(text, "email")} />
+        <TextBox placeholder="Who are you? (Student or Teacher)" onChangeText={text => handleChange(text, "role")}/>
+        <TextBox placeholder="Password" secureTextEntry={true}  onChangeText={text => handleChange(text, "pwd")}/>
+        <TextBox placeholder="Confirme Password" secureTextEntry={true}  onChangeText={text => handleChange(text, "pwd2")}/>
+        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", width: "92%", }}>
+            <Btn onClick={() => SignUp()} title="Sign Up" style={{ width: "48%" }} />
+            <Btn onClick={() => navigation.replace("Login")} title="Login" style={{ width: "48%", backgroundColor: "#344869" }} />
+        </View>
+    </View>
+}
+

@@ -1,7 +1,6 @@
-import { View, Text, SafeAreaView, StyleSheet } from "react-native";
-import React from "react";
+import { View, Text, SafeAreaView, StyleSheet, FlatList } from "react-native";
+import React, { useContext } from "react";
 import StdButton from "../../components/Standards/StdButton";
-
 /*
     This View is a root for the sign up pages
     taking navigation as an argument and passing it to the rest of the code
@@ -9,7 +8,9 @@ import StdButton from "../../components/Standards/StdButton";
 */
 
 const SignUpRoot = ({ navigation }) => {
+
   return (
+   
     <SafeAreaView style={styles.container}>
       <Text style={styles.text}>Welcome to Tasks-R-Us</Text>
       <Text style={styles.createAccount}>Create Account</Text>
@@ -35,7 +36,11 @@ const SignUpRoot = ({ navigation }) => {
       {/* navigation.navigate is how the navigator jumps from each screen // to
       the next */}
       <StdButton title="Login" onPress={() => navigation.navigate("Login")} />
+    
+
+
     </SafeAreaView>
+  
   );
 };
 

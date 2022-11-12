@@ -9,21 +9,25 @@ const Stack = createNativeStackNavigator();
 const TaskStack = (props) => {
   return (
     <Stack.Navigator
+      //screenOptions={{headerTitleAlign: 'center'}}
       initialRouteName="TaskRoot"
       screenOptions={{
         headerStyle: {
-          // backgroundColor: "gray",
+          backgroundColor: "#4169e1",
         },
-        headerTitleStyle: { fontSize: 30, fontWeight: "bold" },
+        headerTitleAlign: 'center',
+        headerTitleStyle: { fontSize: 30, fontWeight: "bold", color: 'white' },
       }}
     >
       <Stack.Screen
+        style={styles.screen}
         name="Tasks"
+        title="Tasks"
         component={TaskRoot}
         options={({ navigation }) => ({
           headerLeft: () => (
-            <TouchableOpacity onPress={() => navigation.navigate("Add Task")}>
-              <Text style={styles.plus}>+</Text>
+            <TouchableOpacity style={styles.addTask} onPress={() => navigation.navigate("Add Task")}>
+              <Text style={styles.plus}>Add a Task</Text>
             </TouchableOpacity>
           ),
         })}
@@ -36,8 +40,26 @@ const TaskStack = (props) => {
 const styles = StyleSheet.create({
   plus: {
     // marginTop: '-15px',
-    fontSize: 40,
+    fontSize: 20,
+    zIndex: -1,
+    color: 'gray',
+    
+    
   },
+  screen: {
+    title: 'Centered',
+    headerTitleAlign: 'center'
+  },
+  addTask: {
+    height: 50,
+    width: 120,
+    borderWidth: 3,
+    borderColor: '#000',
+    //borderRadius: 33,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ffd700',
+  }
 });
 
 export default TaskStack;
