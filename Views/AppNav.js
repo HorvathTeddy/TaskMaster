@@ -43,10 +43,11 @@ const AppNav = () => {
             <MaterialCommunityIcons name="account" color={color} size={size} />
           ),
         }} />
+
           <Tab.Screen name="Settings" component={Settings} options={{
           tabBarLabel: 'Settings',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="application-settings" color={color} size={size} />
+            <MaterialCommunityIcons name="eye-settings" color={color} size={size} />
           ),
         }} />
         </Tab.Navigator>
