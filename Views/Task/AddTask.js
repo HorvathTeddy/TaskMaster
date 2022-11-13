@@ -1,29 +1,19 @@
-import { View, StyleSheet, TextInput } from "react-native";
-import React, {useState} from "react";
+import { View, StyleSheet } from "react-native";
+import React from "react";
 import Entry from "./Entry";
 import StdButton from "../../components/Standards/StdButton";
 
-const AddTask = (props) => {
-  const [task, setTask] = useState()
-  const [dueDate, setDueDate] = useState()
-  const [note, setNote] = useState()
-  const [taskItems, setTaskItems] = useState([])
-
-  const handleAddTask = () => {
-    setTaskItems([...taskItems, task, dueDate, note])
-    setTask(null)
-  }
-
+const AddTask = (navigation) => {
   return (
     <View style={styles.container}>
-      <Entry title="Task Name" value={task} onChangeText={text => setTask(text)} />
-      <Entry title="Due Date" value={dueDate} onChangeText={text => setDueDate(text)} />
-      <Entry title="Note" value={note} onChangeText={text => setNote(text)}/>
-      <TextInput {...props} />
+      <Entry title="Task Name"></Entry>
+      <Entry title="Due Date"></Entry>
+      <Entry title="Note"></Entry>
+      <Entry title="ice cream"></Entry>
       <View style={styles.addTask}>
         <StdButton
-          onPress={() => handleAddTask()}
           title="Add Task"
+          onPress={() => navigation.navigate("TaskRoot")}
         />
       </View>
     </View>

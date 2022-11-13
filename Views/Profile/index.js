@@ -25,8 +25,8 @@ export default function App() {
                 </View>
 
                 <View style={styles.infoContainer}>
-                    <Text style={[styles.text, { fontWeight: "200", fontSize: 36 }]}>Teddy Horvath</Text>
-                    <Text style={[styles.text, { color: "#AEB5BC", fontSize: 14 }]}>Programmer</Text>
+                    <Text style={[styles.text, { fontWeight: "200", fontSize: 36 }]}>Name</Text>
+                    <Text style={[styles.text, { color: "#AEB5BC", fontSize: 14 }]}>Company Role: Company Name</Text>
                 </View>
 
                 <View style={styles.statsContainer}>
@@ -44,7 +44,7 @@ export default function App() {
                     </View>
                 </View>
 
-                <View style={{ marginTop: 32 }}>
+                {/* <View style={{ marginTop: 32 }}>
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                         <View style={styles.mediaImageContainer}>
                             <Image source={require("../../assets/media1.jpg")} style={styles.image} resizeMode="cover"></Image>
@@ -60,7 +60,7 @@ export default function App() {
                         <Text style={[styles.text, { fontSize: 24, color: "#DFD8C8", fontWeight: "300" }]}>70</Text>
                         <Text style={[styles.text, { fontSize: 12, color: "#DFD8C8", textTransform: "uppercase" }]}>Media</Text>
                     </View>
-                </View>
+                </View> */}
 
                 <Text style={[styles.subText, styles.recent]}>Recent Activity</Text>
                 <View style={{ alignItems: "center" }}>

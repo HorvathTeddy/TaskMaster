@@ -6,7 +6,7 @@ import AddTask from "../Task/AddTask";
 
 const Stack = createNativeStackNavigator();
 
-const TaskStack = (props) => {
+const TaskStack = () => {
   return (
     <Stack.Navigator
       //screenOptions={{headerTitleAlign: 'center'}}
@@ -21,8 +21,7 @@ const TaskStack = (props) => {
     >
       <Stack.Screen
         style={styles.screen}
-        name="Tasks"
-        title="Tasks"
+        name="Tasks Root"
         component={TaskRoot}
         options={({ navigation }) => ({
           headerLeft: () => (
@@ -32,7 +31,9 @@ const TaskStack = (props) => {
           ),
         })}
       />
-      <Stack.Screen name="Add Task" component={AddTask} />
+      <Stack.Screen name="Add Task" component={AddTask} options={{
+          title: "Add a Task"
+        }}/>
     </Stack.Navigator>
   );
 };
