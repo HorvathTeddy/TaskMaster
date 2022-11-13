@@ -3,10 +3,10 @@ import React from "react";
 import Task from "./Task";
 import { useRoute } from "@react-navigation/native";
 
-const TaskRoot = ({navigation, route}) => {
-
+const TaskRoot = () => {
+  const route = useRoute();
   return (
-    <>
+
     <ScrollView style={styles.scrollView}>
       <Task taskName={"Something"} dueDate={"22/10/2022"} />
       <Task taskName={"Something"} />
@@ -15,10 +15,9 @@ const TaskRoot = ({navigation, route}) => {
       <Task taskName={"Something"} />
       <Task taskName={"Something"} />
       <Task taskName={"Something"} />
-    </ScrollView>
-    </>
-  );
-};
+    </ScrollView> 
+    )}
+ 
 
 const styles = StyleSheet.create({
   scrollView: {

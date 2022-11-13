@@ -1,19 +1,27 @@
-import { View, StyleSheet } from "react-native";
-import React from "react";
+import { View, StyleSheet, TextInput, Button } from "react-native";
+import React, {useState} from "react";
 import Entry from "./Entry";
 import StdButton from "../../components/Standards/StdButton";
+import { useNavigation } from '@react-navigation/native';
 
 const AddTask = (navigation) => {
+  const [message, setMessage] = useState('');
+
+  const goToMessageScreen = () => {
+    navigation.navigate('TaskRoot', {
+      message
+    });
+  };
   return (
     <View style={styles.container}>
-      <Entry title="Task Name"></Entry>
+      <TextInput title="Task Name" value={message} onChangeText={(text) => setMessage(text)}></TextInput>
       <Entry title="Due Date"></Entry>
       <Entry title="Note"></Entry>
       <Entry title="ice cream"></Entry>
       <View style={styles.addTask}>
-        <StdButton
+        <Button
           title="Add Task"
-          onPress={() => navigation.navigate("TaskRoot")}
+          onPress={goToMessageScreen}
         />
       </View>
     </View>

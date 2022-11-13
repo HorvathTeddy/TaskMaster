@@ -10,7 +10,7 @@ const TaskStack = () => {
   return (
     <Stack.Navigator
       //screenOptions={{headerTitleAlign: 'center'}}
-      initialRouteName="TaskRoot"
+      initialRouteName="TasksRoot"
       screenOptions={{
         headerStyle: {
           backgroundColor: "#4169e1",
@@ -21,17 +21,17 @@ const TaskStack = () => {
     >
       <Stack.Screen
         style={styles.screen}
-        name="Tasks Root"
+        name="TaskRoot"
         component={TaskRoot}
         options={({ navigation }) => ({
           headerLeft: () => (
-            <TouchableOpacity style={styles.addTask} onPress={() => navigation.navigate("Add Task")}>
+            <TouchableOpacity style={styles.addTask} onPress={() => navigation.navigate("AddTask")}>
               <Text style={styles.plus}>Add a Task</Text>
             </TouchableOpacity>
           ),
         })}
       />
-      <Stack.Screen name="Add Task" component={AddTask} options={{
+      <Stack.Screen name="AddTask" component={AddTask} options={{
           title: "Add a Task"
         }}/>
     </Stack.Navigator>
