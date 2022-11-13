@@ -15,9 +15,6 @@ const Task = ({ dueDate, taskName }) => {
         <Text style={styles.taskText}>Due Date: {dueDate}</Text>
         <Text style={styles.taskText}>Note: {dueDate}</Text>
         <View style={styles.taskStatus}>
-          {
-            
-          }
           <View style={styles.circleShape} />
           <View style={styles.circleShape} />
           <View style={styles.circleShape} />
