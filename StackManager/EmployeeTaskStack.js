@@ -1,8 +1,8 @@
 import { Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import TaskRoot from "../Task/TaskRoot";
-import AddTask from "../Task/AddTask";
+import TaskRoot from "../screens/Task/TaskRoot";
+import AddTask from "../screens/Task/AddTask";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,17 +23,7 @@ const TaskStack = () => {
         style={styles.screen}
         name="TaskRoot"
         component={TaskRoot}
-        options={({ navigation }) => ({
-          headerLeft: () => (
-            <TouchableOpacity style={styles.addTask} onPress={() => navigation.navigate("AddTask")}>
-              <Text style={styles.plus}>Add a Task</Text>
-            </TouchableOpacity>
-          ),
-        })}
       />
-      <Stack.Screen name="AddTask" component={AddTask} options={{
-          title: "Add a Task"
-        }}/>
     </Stack.Navigator>
   );
 };

@@ -1,6 +1,5 @@
 node_modules/
 .expo/
-dist/
 npm-debug.*
 *.jks
 *.p8
@@ -9,8 +8,12 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
-yarn.lock
-todo.todo
+
 
 # macOS
 .DS_Store
+firebase.js
+package.json
+package-lock.json
+yarn-error.log
+yarn.lock
