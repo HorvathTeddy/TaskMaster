@@ -4,11 +4,15 @@ import { View, Text, TextInput, StyleSheet } from "react-native";
 // App standard Input that can be used anywhere as a component
 // Takes a title for the standard title of the input
 
-const StdInputs = ({ title }) => {
+const StdInputs = (props) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.taskName}>{title}</Text>
-      <TextInput style={styles.taskInput}></TextInput>
+      <Text style={styles.taskName}>{props.title}</Text>
+      <TextInput
+        multiline
+        numberOfLines={props.numberOfLines}
+        style={styles.taskInput}
+      ></TextInput>
     </View>
   );
 };

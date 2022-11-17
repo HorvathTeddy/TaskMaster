@@ -19,7 +19,7 @@ const TaskStack = (props) => {
       }}
     >
       <Stack.Screen
-        name="Tasks"
+        name="TaskRoot"
         component={TaskRoot}
         options={({ navigation }) => ({
           headerLeft: () => (
@@ -29,7 +29,10 @@ const TaskStack = (props) => {
           ),
         })}
       />
-      <Stack.Screen name="Add Task" component={AddTask} />
+      <Stack.Screen
+        name="Add Task"
+        children={() => <AddTask navigation={props.navigation} {...props} />}
+      />
     </Stack.Navigator>
   );
 };
