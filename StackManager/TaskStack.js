@@ -40,18 +40,18 @@ useEffect(() => {
 
   return (
     <>
-    {user?.role === "Manager" ? <Stack.Navigator
-      //screenOptions={{headerTitleAlign: 'center'}}
-      initialRouteName="TasksRoot"
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: "#4169e1",
-        },
-        headerTitleAlign: 'center',
-        headerTitleStyle: { fontSize: 30, fontWeight: "bold", color: 'white' },
+    {user?.role === "Manager" ? 
+      <Stack.Navigator
+        //screenOptions={{headerTitleAlign: 'center'}}
+        initialRouteName="TaskRoot"
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "#4169e1",
+          },
+          headerTitleAlign: 'center',
+          headerTitleStyle: { fontSize: 30, fontWeight: "bold", color: 'white' },
       }}
     >
-
       <Stack.Screen
         style={styles.screen}
         name="TaskRoot"
@@ -62,6 +62,7 @@ useEffect(() => {
               <Text style={styles.plus}>Add a Task</Text>
             </TouchableOpacity>
           ),
+          title: "Tasks List"
         })}
       />
       <Stack.Screen name="AddTask" component={AddTask} options={{
@@ -69,16 +70,16 @@ useEffect(() => {
         }}/>
     </Stack.Navigator> : <Stack.Navigator
       //screenOptions={{headerTitleAlign: 'center'}}
-      initialRouteName="TasksRoot"
+      initialRouteName="TaskRoot"
       screenOptions={{
         headerStyle: {
           backgroundColor: "#4169e1",
         },
         headerTitleAlign: 'center',
         headerTitleStyle: { fontSize: 30, fontWeight: "bold", color: 'white' },
+        title: "Tasks List"
       }}
     >
-
       <Stack.Screen
         style={styles.screen}
         name="TaskRoot"

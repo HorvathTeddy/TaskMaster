@@ -1,12 +1,9 @@
-
-import React, { useState, useEffect } from 'react';
+import 'react-native-gesture-handler';
+import React, { useState } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import LoginStack from './StackManager/LoginStack'
-import ManagerTaskStack from './StackManager/ManagerTaskStack'
-import EmployeeTaskStack from './StackManager/EmployeeTaskStack'
+import TaskStack from './StackManager/TaskStack'
 import firebase from 'firebase/app';
 import TaskCalendar from './screens/TaskCalendar'
 import Profile from './screens/Profile'
@@ -41,7 +38,7 @@ function App() {
     <NavigationContainer>
        { isLoggedIn ? 
         <Tab.Navigator screenOptions={{ headerShown: false }}>
-          <Tab.Screen name="Tasks" component={ManagerTaskStack} options={{
+          <Tab.Screen name="Tasks" component={TaskStack} options={{
           tabBarLabel: 'Tasks',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
