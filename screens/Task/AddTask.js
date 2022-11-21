@@ -6,13 +6,17 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios'
 //import axios from '../../axios.js'
 
-const AddTask = () => {
-  const navigation = useNavigation()
+const AddTask = ({navigation: {goBack}}) => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [date, setDate] = useState();
+  const [date, setDate] = useState('');
+  //const [completed, setCompleted] = useState(false)
 
   const handleSubmit = async () => {
+    if (name === '' || description === '') {
+        alert('All fields are required')
+        return
+      }
     axios.post("http://10.0.2.2:8080/tasks", {
       name: name,
       description: description,
@@ -24,16 +28,6 @@ const AddTask = () => {
   .catch(function (error) {
     console.log(error);
   });
-    // if (name === '' || description === '') {
-    //   alert('All fields are required')
-    //   return
-    // }
-    // const resp = await axios.post("/tasks", {
-    //   name,
-    //   description,
-    // })
-    // console.log(resp.data)
-    // alert("Your task has been added to the database. 😎")
   }
   
   return (
@@ -49,9 +43,10 @@ const AddTask = () => {
         <Button
           title="Add Task"
           mode='contained'
-          onPress={handleSubmit  
-            //navigation.navigate("TaskRoot", {name: name, description: description, date: date})
-          }
+          onPress={ 
+                           handleSubmit}
+            //navigation.navigate("TaskRoot")
+          
         />
       </View>
     </View>

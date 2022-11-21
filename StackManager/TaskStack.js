@@ -6,6 +6,7 @@ import AddTask from "../screens/Task/AddTask";
 import firebase from 'firebase/app';
 import "firebase/auth";
 import "firebase/firestore"
+import axios from "axios";
 
 const Stack = createNativeStackNavigator();
 
@@ -15,7 +16,7 @@ const TaskStack = () => {
 
   const [user,setUser] = useState(null)
   const [users,setUsers] = useState([])
-
+  
   useEffect(() => {
     firestore().collection("users").doc(auth().currentUser.uid).get()
         .then(user => {
@@ -58,8 +59,8 @@ useEffect(() => {
         component={TaskRoot}
         options={({ navigation }) => ({
           headerLeft: () => (
-            <TouchableOpacity style={styles.addTask} onPress={() => navigation.navigate("AddTask")}>
-              <Text style={styles.plus}>Add a Task</Text>
+            <TouchableOpacity style={styles.addTask} onPress={() => navigation.navigate('AddTask')}>
+              <Text style={styles.plus}>+</Text>
             </TouchableOpacity>
           ),
           title: "Tasks List"
@@ -93,9 +94,10 @@ useEffect(() => {
 const styles = StyleSheet.create({
   plus: {
     // marginTop: '-15px',
-    fontSize: 20,
+    fontSize: 40,
     zIndex: -1,
-    color: 'gray',
+    color: 'white',
+    opacity: 0.75
     
     
   },
@@ -106,12 +108,8 @@ const styles = StyleSheet.create({
   addTask: {
     height: 50,
     width: 120,
-    borderWidth: 3,
-    borderColor: '#000',
-    //borderRadius: 33,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ffd700',
   }
 });
 
