@@ -16,26 +16,55 @@ const AddTask = () => {
       <StdInputs title="ice cream"></StdInputs>
 =======
 import { useNavigation } from '@react-navigation/native';
+import axios from 'axios'
+//import axios from '../../axios.js'
 
-const AddTask = (navigation) => {
-  const [message, setMessage] = useState('');
+const AddTask = ({navigation: {goBack}}) => {
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [date, setDate] = useState('');
+  //const [completed, setCompleted] = useState(false)
 
-  const goToMessageScreen = () => {
-    navigation.navigate('TaskRoot', {
-      message
-    });
-  };
+  const handleSubmit = async () => {
+    if (name === '' || description === '') {
+        alert('All fields are required')
+        return
+      }
+    axios.post("http://10.0.2.2:8080/tasks", {
+      name: name,
+      description: description,
+      date: date
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  }
+  
   return (
+    
     <View style={styles.container}>
-      <TextInput title="Task Name" value={message} onChangeText={(text) => setMessage(text)}></TextInput>
-      <Entry title="Due Date"></Entry>
+      <TextInput placeholder="Enter a task name" value={name} onChangeText={(text) => setName(text)}></TextInput>
+      <TextInput placeholder="Enter a task description" value={description} onChangeText={(text) => setDescription(text)}></TextInput>
+      <TextInput placeholder="Enter a task due date" value={date} onChangeText={(text) => setDate(text)}></TextInput>
+      {/* <Entry title="Due Date"></Entry>
       <Entry title="Note"></Entry>
+<<<<<<< HEAD
       <Entry title="ice cream"></Entry>
 >>>>>>> 315c8f13bf76db0cb266c46b81b33f79f7e3e4be:screens/Task/AddTask.js
+=======
+      <Entry title="ice cream"></Entry> */}
+>>>>>>> f821a6a4f1bbce863159096929287282075a20e4
       <View style={styles.addTask}>
         <Button
           title="Add Task"
-          onPress={goToMessageScreen}
+          mode='contained'
+          onPress={ 
+                           handleSubmit}
+            //navigation.navigate("TaskRoot")
+          
         />
       </View>
     </View>

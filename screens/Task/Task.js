@@ -8,10 +8,11 @@ show every task that is available at any given time
 */
 
 const Task = ({ dueDate, taskName }) => {
+
   return (
     <View style={styles.taskContainer}>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.taskText}>Task Name: {taskName}</Text>
+        <Text style={styles.taskText}></Text>
         <Text style={styles.taskText}>Due Date: {dueDate}</Text>
         <Text style={styles.taskText}>Note: {dueDate}</Text>
         <View style={styles.taskStatus}>
