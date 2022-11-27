@@ -20,7 +20,7 @@ const TaskRoot = () => {
     const displayTasks = async () => {
       setLoading(true)
       try {
-        const {data: response} = await axios.get('http://10.0.2.2:8080/tasks')
+        const {data: response} = await axios.get('http://localhost:8080/tasks')
         setData(response)
       } catch (error) {
         console.error(error.message)
