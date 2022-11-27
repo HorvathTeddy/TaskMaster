@@ -1,21 +1,5 @@
 import { View, StyleSheet, TextInput, Button } from "react-native";
 import React, {useState} from "react";
-import Entry from "./Entry";
-import StdButton from "../../components/Standards/StdButton";
-<<<<<<< HEAD:Views/Task/AddTask.js
-import { useNavigation } from "@react-navigation/native";
-import StdInputs from "../../components/Standards/StdInputs";
-
-const AddTask = () => {
-  const navigation = useNavigation();
-  return (
-    <View style={styles.container}>
-      <StdInputs title="Task Name"></StdInputs>
-      <StdInputs title="Due Date"></StdInputs>
-      <StdInputs title="Note" multiline={true} numberOfLines={4}></StdInputs>
-      <StdInputs title="ice cream"></StdInputs>
-=======
-import { useNavigation } from '@react-navigation/native';
 import axios from 'axios'
 //import axios from '../../axios.js'
 
@@ -51,12 +35,9 @@ const AddTask = ({navigation: {goBack}}) => {
       <TextInput placeholder="Enter a task due date" value={date} onChangeText={(text) => setDate(text)}></TextInput>
       {/* <Entry title="Due Date"></Entry>
       <Entry title="Note"></Entry>
-<<<<<<< HEAD
-      <Entry title="ice cream"></Entry>
->>>>>>> 315c8f13bf76db0cb266c46b81b33f79f7e3e4be:screens/Task/AddTask.js
-=======
+
       <Entry title="ice cream"></Entry> */}
->>>>>>> f821a6a4f1bbce863159096929287282075a20e4
+
       <View style={styles.addTask}>
         <Button
           title="Add Task"
