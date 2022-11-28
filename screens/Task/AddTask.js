@@ -1,6 +1,6 @@
 import { View, StyleSheet, TextInput, Button } from "react-native";
 import React, {useState} from "react";
-import axios from 'axios'
+import axios from 'axios';
 //import axios from '../../axios.js'
 
 const AddTask = ({navigation: {goBack}}) => {
@@ -15,6 +15,7 @@ const AddTask = ({navigation: {goBack}}) => {
         return
       }
     axios.post("http://localhost:8080/tasks", {
+      id: taskId,
       name: name,
       description: description,
       date: date

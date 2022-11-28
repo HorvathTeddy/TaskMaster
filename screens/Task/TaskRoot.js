@@ -1,12 +1,17 @@
-import { View, Text, ScrollView, StyleSheet, SafeAreaView, RefreshControl } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity,  StyleSheet, SafeAreaView, RefreshControl, Dimensions} from "react-native";
 import React, {useState, useEffect} from "react";
 import Task from "./Task";
 import { useRoute } from "@react-navigation/native";
 import axios from 'axios'
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const { height } = Dimensions.get('window');
 
 const wait = (timeout) => {
   return new Promise(resolve => setTimeout(resolve, timeout));
 }
+
+
 
 const TaskRoot = () => {  
   const [refreshing, setRefreshing] = React.useState(false);
@@ -31,35 +36,52 @@ const TaskRoot = () => {
   }, [])
 
   return (
-    <View>
-    <ScrollView>
-      <View style={{ flexGrow: 1 }}>
+     
+    
+    
+   //<ScrollView contentContainerStyle={{ flexDirection:"column" }}>
+    <View >
+    <ScrollView >
+      <View style={{ flex: 1 }}>
         {loading && <Text>Loading</Text>}
         {!loading && (
           <View style={styles.tasks}>
-            <Text>Tasks List</Text>
-            {data.map(item => (<View style={styles.tasksContainer}>
-                                <Text>
-                                  Task name: {item.name}
-                                </Text>
-                                <Text>
-                                  Task description: {item.description}
-                                </Text>
-                                <Text>
-                                  Task due date: {item.date}
-                                </Text>
-                              </View>))}
+            {data.map(item => 
+              (
+                <TouchableOpacity 
+                  style={styles.tasksContainer} 
+                  onPress={() => navigation.navigate("Task")}
+                  >
+
+                  <Text style={styles.textCenter}>
+                    <Text style={{fontWeight: 'bold'}}>Task: </Text>
+                    <Text>{item.name}</Text>
+                  </Text>
+
+                  <Text style={styles.textCenter}>
+                    <Text style={{fontWeight: 'bold'}}>Description: </Text>
+                    <Text>{item.description}</Text>
+                  </Text>
+
+                  <Text style={styles.textCenter}>
+                    <Text style={{fontWeight: 'bold'}}>Due date: {'\n'}</Text>
+                    <Text>{item.date}</Text>
+                  </Text>  
+
+              </TouchableOpacity>))}
           </View>
         )}
       </View>
-    </ScrollView> 
+      </ScrollView>  
     </View>
+    //</ScrollView>
     )}
  
 
 const styles = StyleSheet.create({
   scrollView: {
     marginBottom: "10%",
+    paddingBottom : 100
   },
   tasks: {
     justifyContent: 'center',
@@ -67,12 +89,20 @@ const styles = StyleSheet.create({
     marginTop: 300
   },
   tasksContainer: {
-    width: '90%',
-    height: '20%',
+    width: '95%',
+    height: '12%',
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 2,
-    margin: 10
+    margin: 10,
+    borderRadius: 20,
+    backgroundColor: '#d2fffc',
+    padding: 15,
+
+  },
+  textCenter: {
+    textAlign: 'center',
+    fontSize: 20
   }
 });
 

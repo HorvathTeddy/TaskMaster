@@ -66,11 +66,11 @@ export default function SignUpScreen({ navigation }) {
         <TextBox placeholder="Role (type admin, manager, or employee)" onChangeText={text => handleChange(text, "role")} />
         <TextBox placeholder="Password" secureTextEntry={true}  onChangeText={text => handleChange(text, "pwd")}/>
         <TextBox placeholder="Confirm Password" secureTextEntry={true}  onChangeText={text => handleChange(text, "pwd2")}/>
-        <View style={{ flexDirection: "colum", justifyContent: "space-between", alignItems: "center", width: "92%", }}>
+        <View style={{ flexDirection: "colum", justifyContent: "space-between", alignItems: "center", width: "92%", paddingBottom:100 }}>
             <Btn onClick={() => SignUp()} title="Sign Up" style={{ width: "48%" }} />
         </View>
-        <View style={{ flexDirection: "colum",  paddingTop: 40, alignItems: "center", width: "92%" }}>
-            <Text style={{fontSize: 20, }}> Already have an account? Click login in to sign in. </Text>
+        <View style={{ position: 'absolute', bottom:0, paddingBottom: 36,flexDirection: "colum",  paddingTop: 60, alignItems: "center", width: "92%" }}>
+            <Text style={{fontSize: 20, textAlign: 'center'}}> Already have an account? Click the login button below. </Text>
             <Btn onClick={() => navigation.replace("Login")} title="Login" style={{ width: "48%", backgroundColor: "#344869" }} />
         </View>
     </View>

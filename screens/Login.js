@@ -47,8 +47,11 @@ export default function Loginscreen({ navigation }) {
         <Text style={{ fontSize: 34, fontWeight: "800", marginBottom: 20 }}>Login</Text>
         <TextBox placeholder="Email Address" onChangeText={text => handleChange(text, "email")} />
         <TextBox placeholder="Password" onChangeText={text => handleChange(text, "pwd")} secureTextEntry={true} />
-        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", width: "92%", }}>
+        <View style={{ flexDirection: "colmun", justifyContent: "space-between", alignItems: "center", width: "92%",  paddingBottom:100}}>
             <Btn onClick={() => Login()} title="Login" style={{ width: "48%" }} />
+        </View>
+        <View style={{ position: 'absolute', bottom:0, paddingBottom: 36,flexDirection: "colum",  paddingTop: 60, alignItems: "center", width: "92%" }}>
+            <Text style={{fontSize: 20, textAlign: 'center'}}> Don't have an account?</Text>
             <Btn onClick={() => navigation.navigate("Sign Up")} title="Sign Up" style={{ width: "48%", backgroundColor: "#344869" }} />
         </View>
     </View>
