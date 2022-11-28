@@ -7,14 +7,14 @@ in one page for future use all task are drawn from a database dynamiclly to
 show every task that is available at any given time
 */
 
-const Task = ({ dueDate, taskName }) => {
-
+const Task = ({route}) => {
+  const {task, description, dueDate} = route.params
   return (
     <View style={styles.taskContainer}>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.taskText}></Text>
-        <Text style={styles.taskText}>Due Date: {dueDate}</Text>
-        <Text style={styles.taskText}>Note: {dueDate}</Text>
+        <Text style={styles.taskText}>Name: {task}</Text>
+        <Text style={styles.taskText}>Description: {JSON.stringify(description)}</Text>
+        <Text style={styles.taskText}>Due Date: {JSON.stringify(dueDate)}</Text>
         <View style={styles.taskStatus}>
           <View style={styles.circleShape} />
           <View style={styles.circleShape} />

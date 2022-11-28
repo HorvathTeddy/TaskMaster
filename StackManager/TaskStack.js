@@ -7,6 +7,7 @@ import firebase from 'firebase/app';
 import "firebase/auth";
 import "firebase/firestore"
 import axios from "axios";
+import Task from '../screens/Task/Task'
 
 const Stack = createNativeStackNavigator();
 
@@ -43,14 +44,17 @@ useEffect(() => {
     <>
     {user?.role === "Manager" ? 
       <Stack.Navigator
-        //screenOptions={{headerTitleAlign: 'center'}}
         initialRouteName="TaskRoot"
         screenOptions={{
           headerStyle: {
             backgroundColor: "#4169e1",
           },
           headerTitleAlign: 'center',
-          headerTitleStyle: { fontSize: 30, fontWeight: "bold", color: 'white' },
+          headerTitleStyle: { 
+            fontSize: 30, 
+            fontWeight: "bold", 
+            color: 'white' 
+          },
       }}
     >
       <Stack.Screen
@@ -66,18 +70,30 @@ useEffect(() => {
           title: "Tasks List"
         })}
       />
-      <Stack.Screen name="AddTask" component={AddTask} options={{
+      <Stack.Screen 
+        name="AddTask" 
+        component={AddTask} 
+        options={{
           title: "Add a Task"
         }}/>
+      <Stack.Screen 
+        name="Task" 
+        component={Task}
+        options={{
+          title: "Your Task"
+      }} />
     </Stack.Navigator> : <Stack.Navigator
-      //screenOptions={{headerTitleAlign: 'center'}}
       initialRouteName="TaskRoot"
       screenOptions={{
         headerStyle: {
           backgroundColor: "#4169e1",
         },
         headerTitleAlign: 'center',
-        headerTitleStyle: { fontSize: 30, fontWeight: "bold", color: 'white' },
+        headerTitleStyle: { 
+          fontSize: 30, 
+          fontWeight: "bold", 
+          color: 'white' 
+        },
         title: "Tasks List"
       }}
     >
@@ -86,6 +102,12 @@ useEffect(() => {
         name="TaskRoot"
         component={TaskRoot}
         />
+      <Stack.Screen 
+        name="Task" 
+        component={Task} 
+        options={{
+        title: "Your Task"
+      }} />
     </Stack.Navigator>}
     </>
   );

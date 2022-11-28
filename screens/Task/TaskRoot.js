@@ -13,7 +13,7 @@ const wait = (timeout) => {
 
 
 
-const TaskRoot = () => {  
+const TaskRoot = ({navigation}) => {  
   const [refreshing, setRefreshing] = React.useState(false);
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
@@ -21,6 +21,9 @@ const TaskRoot = () => {
   }, []);
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([])
+  const [name, setName] = useState('')
+  const [description, setDescription] = useState('')
+  const [dueDate, setDueDate] = useState('')
   useEffect(() => {
     const displayTasks = async () => {
       setLoading(true)
@@ -50,7 +53,13 @@ const TaskRoot = () => {
               (
                 <TouchableOpacity 
                   style={styles.tasksContainer} 
-                  onPress={() => navigation.navigate("Task")}
+                  onPress={() => navigation.navigate("Task",
+                    {
+                      task: item.name,
+                      description: item.description,
+                      dueDate: item.date
+                    }
+                  )}
                   >
 
                   <Text style={styles.textCenter}>
