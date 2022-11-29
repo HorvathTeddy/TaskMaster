@@ -47,7 +47,7 @@ useEffect(() => {
         initialRouteName="TaskRoot"
         screenOptions={{
           headerStyle: {
-            backgroundColor: "#4169e1",
+            backgroundColor: "#1999e1",
           },
           headerTitleAlign: 'center',
           headerTitleStyle: { 
@@ -67,20 +67,25 @@ useEffect(() => {
               <Text style={styles.plus}>+</Text>
             </TouchableOpacity>
           ),
-          title: "Tasks List"
+          title: "Tasks"
         })}
       />
       <Stack.Screen 
         name="AddTask" 
         component={AddTask} 
         options={{
-          title: "Add a Task"
+          title: "Add a Task",
+          headerBackTitleStyle:{fontSize: 25, color: 'white'},
+          headerTintColor: '#fff',
+          
         }}/>
       <Stack.Screen 
         name="Task" 
         component={Task}
         options={{
-          title: "Your Task"
+          title: "Assigned Task",
+          headerBackTitleStyle:{fontSize: 25},
+          headerTintColor: '#fff',
       }} />
     </Stack.Navigator> : <Stack.Navigator
       initialRouteName="TaskRoot"
@@ -94,19 +99,23 @@ useEffect(() => {
           fontWeight: "bold", 
           color: 'white' 
         },
-        title: "Tasks List"
+        title: "Tasks", 
+
       }}
     >
       <Stack.Screen
         style={styles.screen}
         name="TaskRoot"
         component={TaskRoot}
+        
         />
       <Stack.Screen 
         name="Task" 
         component={Task} 
         options={{
-        title: "Your Task"
+          title: "Assigned Task",
+          headerBackTitleStyle:{fontSize: 20},
+          headerTintColor: '#fff',
       }} />
     </Stack.Navigator>}
     </>
@@ -115,8 +124,7 @@ useEffect(() => {
 
 const styles = StyleSheet.create({
   plus: {
-    // marginTop: '-15px',
-    fontSize: 40,
+    fontSize: 55,
     zIndex: -1,
     color: 'white',
     opacity: 0.75
@@ -125,13 +133,16 @@ const styles = StyleSheet.create({
   },
   screen: {
     title: 'Centered',
-    headerTitleAlign: 'center'
+    headerTitleAlign: 'center', 
   },
   addTask: {
     height: 50,
     width: 120,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingRight: 40,
+    marginTop: -30,
+
   }
 });
 

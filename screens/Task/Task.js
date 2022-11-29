@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity} from "react-native";
 import React from "react";
 
 /*
@@ -11,37 +11,49 @@ const Task = ({route}) => {
   const {task, description, dueDate} = route.params
   return (
     <View style={styles.taskContainer}>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.taskText}>Name: {task}</Text>
-        <Text style={styles.taskText}>Description: {JSON.stringify(description)}</Text>
-        <Text style={styles.taskText}>Due Date: {JSON.stringify(dueDate)}</Text>
+      
+        <Text style={styles.taskText}>{task}</Text>
+        <Text style={styles.taskText}>Description: {description}</Text>
+        <Text style={styles.taskText}>Due Date: {dueDate}</Text>
         <View style={styles.taskStatus}>
+
           <View style={styles.circleShape} />
           <View style={styles.circleShape} />
           <View style={styles.circleShape} />
           <View style={styles.circleShape} />
-        </View>
-      </TouchableOpacity>
     </View>
+    </View>
+      
+    
+
   );
 };
 
 const styles = StyleSheet.create({
   taskContainer: {
-    paddingTop: "5%",
-    paddingLeft: "7.5%",
-    paddingRight: "7.5%",
-  },
-  button: {
-    justifyContent: "center",
+    alignSelf: "center",
     alignItems: "center",
-    paddingTop: 20,
-    paddingBottom: 20,
+    width: "95%",
     borderWidth: 2,
-    borderRadius: 10,
+    borderRadius: 10, 
+    borderColor: '#555555', 
+    backgroundColor: '#ffffff', 
+    justifyContent: 'center',
+    marginTop: 50,
+
+    backgroundColor: '#f1fcfd',
+    
+    
   },
+
   taskText: {
-    fontSize: 18,
+    width: '90%',
+    textAlign: 'center',
+    fontSize: 20,
+    margin: 20,
+    padding: 20,
+    borderWidth: 1,
+    borderRadius: 10, 
   },
   taskStatus: {
     flexDirection: "row",
@@ -54,22 +66,40 @@ const styles = StyleSheet.create({
     borderRadius: 20 / 2,
     backgroundColor: "green",
   },
-  tasks: {
-    fontSize: 40,
-    fontWeight: "bold",
-  },
-  addTask: {
-    fontSize: 60,
-  },
-  text: {
-    // justifyContent: "center",
+  
+//new stuff
+  container: {
+    alignSelf: "center",
     alignItems: "center",
-    textAlign: "center",
-    marginTop: "5%",
-    width: "80%",
+    width: "95%",
     borderWidth: 1,
-    padding: 10,
+    borderRadius: 10, 
+    borderColor: '#555555', 
+    backgroundColor: '#ffffff', 
+    justifyContent: 'center',
+    marginTop: 50,
+    paddingTop:10,
   },
+
+  taskName: {
+    width: '90%',
+    fontSize: 20,
+    margin: 20,
+    padding: 20,
+    borderWidth: 1,
+    borderRadius: 10, 
+  },
+  description: {
+    width: '90%',
+    fontSize: 20,
+    margin: 20,
+    padding: 20,
+    borderWidth: 1,
+    borderRadius: 10, 
+    height:200,
+    textAlignVertical: 'top',
+  }, 
+
 });
 
 export default Task;
