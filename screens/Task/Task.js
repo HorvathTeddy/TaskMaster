@@ -18,7 +18,7 @@ const Task = ({route}) => {
         <Text style={styles.taskText}>Due Date: {dueDate}</Text>
         <View style={styles.taskStatus}>
           <Text style={styles.complete}> Complete?</Text><Checkbox> </Checkbox>
-    </View>
+        </View>
     </View>
       
     
@@ -37,12 +37,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff', 
     justifyContent: 'center',
     marginTop: 50,
-
     backgroundColor: '#f1fcfd',
-    
-    
   },
-
   taskText: {
     width: '90%',
     textAlign: 'center',

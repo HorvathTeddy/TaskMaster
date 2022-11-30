@@ -12,21 +12,19 @@ const handlePress = () => {
     isChecked(!checked);
 }
 
-
   return (
-    <TouchableWithoutFeedback style={styles.container} onPress={handlePress}>
+    <TouchableWithoutFeedback style={styles.checkbox} onPress={handlePress}>
         {(checked === true) && <Text style={styles.text}>&#9932;</Text>}
     </TouchableWithoutFeedback>
   )
 }
 
 const styles = StyleSheet.create({
-    container: {
+    checkbox: {
         width: 32,
         height: 32,
         backgroundColor: 'white',
         borderWidth: 2,
-        //paddingBottom: 20
     },
     text: {
         fontSize: 20,

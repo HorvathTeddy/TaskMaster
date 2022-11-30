@@ -43,7 +43,8 @@ export default function Loginscreen({ navigation }) {
             });
     }
 
-    return <View style={styles.view}>
+    return 
+    <View style={styles.view}>
         <Text style={{ fontSize: 34, fontWeight: "800", marginBottom: 20 }}>Login</Text>
         <TextBox placeholder="Email Address" onChangeText={text => handleChange(text, "email")} />
         <TextBox placeholder="Password" onChangeText={text => handleChange(text, "pwd")} secureTextEntry={true} />
