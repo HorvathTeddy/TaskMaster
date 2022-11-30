@@ -45,7 +45,7 @@ const Settings = () => {
         <Text style={styles.title}>Settings</Text>
         <Text style={{fontSize: 22, textAlign: 'center',}}>Company role: {user?.role}</Text>
         <View style={styles.logOut}>
-            <Btn  title="Log Out" onClick={() => firebase.auth().signOut()} />
+            <Btn  title="Log Out" onClick={() => firebase.auth().signOut()} style={{backgroundColor: '#1999e1'}}/>
          </View>
     </View>
 
@@ -85,8 +85,9 @@ const styles = StyleSheet.create({
     },
     logOut:{
         //position:'absolute',
+        color: '#1999e1',
         bottom:0,
-        paddingBottom: 50,
+        paddingBottom: 30,
         width: '50%',
         alignSelf: 'center',
     },
