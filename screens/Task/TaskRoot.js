@@ -1,9 +1,6 @@
 import { View, Text, ScrollView, TouchableOpacity,  StyleSheet, SafeAreaView, RefreshControl, Dimensions} from "react-native";
 import React, {useState, useEffect} from "react";
-import Task from "./Task";
-import { useRoute } from "@react-navigation/native";
 import axios from 'axios'
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const { height } = Dimensions.get('window');
 
@@ -28,7 +25,7 @@ const TaskRoot = ({navigation}) => {
     const displayTasks = async () => {
       setLoading(true)
       try {
-        const {data: response} = await axios.get('https://taskmaster-api.onrender.com/tasks')
+        const {data: response} = await axios.get('http://localhost:8080/tasks')
         setData(response)
       } catch (error) {
         console.error(error.message)
