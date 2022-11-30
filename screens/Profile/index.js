@@ -31,7 +31,7 @@ export default function App() {
 
                 <View style={styles.statsContainer}>
                     <View style={styles.statsBox}>
-                        <Text style={[styles.text, { fontSize: 24 }]}>VathCorp</Text>
+                        <Text style={[styles.text, { fontSize: 24 }]}>Task Master</Text>
                         <Text style={[styles.text, styles.subText]}>Company Name</Text>
                     </View>
                     <View style={[styles.statsBox, { borderColor: "#DFD8C8", borderLeftWidth: 1, borderRightWidth: 1 }]}>
@@ -68,7 +68,7 @@ export default function App() {
                         <View style={styles.activityIndicator}></View>
                         <View style={{ width: 250 }}>
                             <Text style={[styles.text, { color: "#41444B", fontWeight: "300" }]}>
-                                Hacked the  <Text style={{ fontWeight: "400" }}>NSA</Text> and <Text style={{ fontWeight: "400" }}>Google</Text>
+                                Made <Text style={{ fontWeight: "400" }}>an</Text> app <Text style={{ fontWeight: "400" }}>and stuff</Text>
                             </Text>
                         </View>
                     </View>
@@ -77,7 +77,7 @@ export default function App() {
                         <View style={styles.activityIndicator}></View>
                         <View style={{ width: 250 }}>
                             <Text style={[styles.text, { color: "#41444B", fontWeight: "300" }]}>
-                                Founder of <Text style={{ fontWeight: "400" }}>VathCorp</Text>
+                                Founder of <Text style={{ fontWeight: "400" }}>Task Master</Text>
                             </Text>
                         </View>
                     </View>

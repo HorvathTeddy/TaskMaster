@@ -25,7 +25,7 @@ const TaskRoot = ({navigation}) => {
     const displayTasks = async () => {
       setLoading(true)
       try {
-        const {data: response} = await axios.get('http://localhost:8080/tasks')
+        const {data: response} = await axios.get('https://taskmaster-api.onrender.com/tasks')
         setData(response)
       } catch (error) {
         console.error(error.message)
@@ -37,12 +37,10 @@ const TaskRoot = ({navigation}) => {
 
   return (
      
-    
-    
-   //<ScrollView contentContainerStyle={{ flexDirection:"column" }}>
-    <View >
+
+    <View>
     <ScrollView >
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, paddingBottom :'200%' }}>
         {loading && <Text>Loading</Text>}
         {!loading && (
           <View style={styles.tasks}>
@@ -84,32 +82,32 @@ const TaskRoot = ({navigation}) => {
     )}
  
 
-const styles = StyleSheet.create({
-  scrollView: {
-    marginBottom: "10%",
-    paddingBottom : 100
-  },
-  tasks: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 300
-  },
-  tasksContainer: {
-    width: '95%',
-    height: '12%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderWidth: 2,
-    margin: 10,
-    borderRadius: 20,
-    backgroundColor: '#d2fffc',
-    padding: 15,
-
-  },
-  textCenter: {
-    textAlign: 'center',
-    fontSize: 20
-  }
-});
+    const styles = StyleSheet.create({
+      scrollView: {
+        marginBottom: "10%",
+        paddingBottom : 100
+      },
+      tasks: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 300
+      },
+      tasksContainer: {
+        width: '95%',
+        height: '50%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: 2,
+        margin: 10,
+        borderRadius: 20,
+        backgroundColor: '#d2fffc',
+        padding: 15,
+    
+      },
+      textCenter: {
+        textAlign: 'center',
+        fontSize: 20
+      }
+    });
 
 export default TaskRoot;
