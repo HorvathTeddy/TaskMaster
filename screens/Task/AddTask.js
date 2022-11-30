@@ -15,7 +15,7 @@ const AddTask = ({navigation: {goBack}}) => {
         alert('All fields are required')
         return
       }
-    axios.post("http://localhost:8080/tasks", {
+    axios.post("https://taskmaster-api.onrender.com/tasks", {
       //id: taskId,
       name: name,
       description: description,
@@ -44,7 +44,7 @@ const AddTask = ({navigation: {goBack}}) => {
       <TextInput style={styles.taskName} placeholder="Enter a due date ex. 2023-03-01" value={date} onChangeText={(text) => setDate(text)}></TextInput>
 
       <View style={styles.addTaskBUT}>
-        <Btn
+        <StdButton
           style={{backgroundColor:'#1999e1', paddingLeft: 10}}
           title="Add Task"
           mode='contained'

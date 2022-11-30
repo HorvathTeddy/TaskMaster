@@ -28,7 +28,7 @@ const TaskRoot = ({navigation}) => {
     const displayTasks = async () => {
       setLoading(true)
       try {
-        const {data: response} = await axios.get('http://localhost:8080/tasks')
+        const {data: response} = await axios.get('https://taskmaster-api.onrender.com/tasks')
         setData(response)
       } catch (error) {
         console.error(error.message)
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   },
   tasksContainer: {
     width: '95%',
-    height: '12%',
+    height: '30%',
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 2,
