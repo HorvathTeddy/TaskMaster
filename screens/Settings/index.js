@@ -41,26 +41,24 @@ const Settings = () => {
   //const {logout} = useContext(AuthContext)
   return (
 
-    <SafeAreaView style={styles.view}>
+    <View style={styles.view}>
         <Text style={styles.title}>Settings</Text>
-        <Text style={{fontSize: 22}}>Company role: {user?.role}</Text>
+        <Text style={{fontSize: 22, textAlign: 'center',}}>Company role: {user?.role}</Text>
         <View style={styles.logOut}>
             <Btn  title="Log Out" onClick={() => firebase.auth().signOut()} />
          </View>
-    </SafeAreaView>
+    </View>
 
-    // <View style={styles.view}>
-    //     <Text style={{ fontSize: 34, fontWeight: "800", marginBottom: 20 }}>Login</Text>
-    //     <TextBox placeholder="Email Address" onChangeText={text => handleChange(text, "email")} />
-    //     <TextBox placeholder="Password" onChangeText={text => handleChange(text, "pwd")} secureTextEntry={true} />
-    //     <View style={{ flexDirection: "colmun", justifyContent: "space-between", alignItems: "center", width: "92%",  paddingBottom:100}}>
-    //         <Btn onClick={() => Login()} title="Login" style={{ width: "48%" }} />
-    //     </View>
-    //     <View style={{ position: 'absolute', bottom:0, paddingBottom: 36,flexDirection: "colum",  paddingTop: 60, alignItems: "center", width: "92%" }}>
-    //         <Text style={{fontSize: 20, textAlign: 'center'}}> Don't have an account?</Text>
-    //         <Btn onClick={() => navigation.navigate("Sign Up")} title="Sign Up" style={{ width: "48%", backgroundColor: "#344869" }} />
-    //     </View>
-    // </View>
+/* <View style={styles.container}>
+<View style={{backgroundColor: '#1999e1', paddingTop:59, alignItems: 'center'}}>
+  <Text style={{fontSize: 30, 
+      fontWeight: "bold", 
+      color: 'white', 
+      paddingBottom: 8}}
+      > Calendar</Text>
+
+</View>
+<View style={styles.center} > */
 
   )
 }
@@ -74,22 +72,29 @@ const styles = StyleSheet.create({
       //alignItems: 'center',
     },
     title:{
-        position: 'absolute',
-        top: 75,
-        fontSize: 25
+        //position: 'absolute',
+        textAlign: 'center',
+        fontSize: 25, 
+        backgroundColor: '#1999e1',
+        paddingTop: 59,
+        fontSize: 30, 
+        fontWeight: "bold", 
+        color: 'white', 
+        paddingBottom: 8
 
     },
     logOut:{
-        position:'absolute',
+        //position:'absolute',
         bottom:0,
         paddingBottom: 50,
-        width: '50%'
+        width: '50%',
+        alignSelf: 'center',
     },
     view: {
         width: "100%",
         height: '100%',
-        justifyContent: "center",
-        alignItems: "center",
+        justifyContent: "space-between",
+        //alignItems: "center",
         //backgroundColor: 'lightblue'
     }
 

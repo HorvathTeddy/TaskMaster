@@ -1,16 +1,22 @@
 import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import axios from 'axios';
 
-const Checkbox = ({completed, isCompleted}) => {
+const Checkbox = () => {
 
+const [completed, isCompleted] = useState(false)
 const [checked, isChecked] = React.useState(completed);
 
 const handlePress = () => {
-    console.log(completed)
+    console.log(!completed)
     isCompleted(!completed);
     isChecked(!checked);
-}
+
+    axios.put("http://localhost:8080/tasks", {
+        completed: true})
+    }
+
 
   return (
     <TouchableWithoutFeedback style={styles.checkbox} onPress={handlePress}>
@@ -27,8 +33,9 @@ const styles = StyleSheet.create({
         borderWidth: 2,
     },
     text: {
-        fontSize: 20,
-        textAlign: 'center'
+        fontSize: 33,
+        textAlign: 'center', 
+        //paddingTop: 1
     }
 })
 

@@ -3,28 +3,50 @@ import React from 'react'
 import {Calendar} from 'react-native-calendars'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-const TaskCalendar = () => {
+
+const TaskCalendar = (props) => {
   return (
     <>
-    <SafeAreaView style={styles.container}>
-      <View style={{backgroundColor: 'lightblue '}}>
-      <Text style={{fontSize: 30, justifyContent: 'center', alignSelf: 'center',
-                    }}>Calender</Text>
+     {/* <Stack.Navigator
+        initialRouteName="Calender"
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "#1999e1",
+          },
+          headerTitleAlign: 'center',
+          headerTitleStyle: { 
+            fontSize: 30, 
+            fontWeight: "bold", 
+            color: 'white' 
+          },
+        }}>
+          <Stack.Screen name="Calendar"  component={Calendar} />
+
+      </Stack.Navigator> */}
+    <View style={styles.container}>
+      <View style={{backgroundColor: '#1999e1', paddingTop:59, alignItems: 'center'}}>
+        <Text style={{fontSize: 30, 
+            fontWeight: "bold", 
+            color: 'white', 
+            paddingBottom: 8}}
+            > Calendar</Text>
+
       </View>
+    <View style={styles.center} >
+
     <Calendar
+      onDayPress={day => {
+        console.log('selected day', day);
+      }}
+      hideExtraDays={true}
       style={styles.cal}
-      // markingType={'period'}
-      // markedDates={{
-      //   '2012-05-15': {marked: true, dotColor: '#50cebb'},
-      //   '2012-05-16': {marked: true, dotColor: '#50cebb'},
-      //   '2012-05-21': {startingDay: true, color: '#50cebb', textColor: 'white'},
-      //   '2012-05-22': {color: '#70d7c7', textColor: 'white'},
-      //   '2012-05-23': {color: '#70d7c7', textColor: 'white', marked: true, dotColor: 'white'},
-      //   '2012-05-24': {color: '#70d7c7', textColor: 'white'},
-      //   '2012-05-25': {endingDay: true, color: '#50cebb', textColor: 'white'}
-      // }}
+      //markingType={'period'}
+      markedDates={{
+        '2022-12-03': {selected: true, marked: true, color: '#50cebb'},
+      }}
     /> 
-    </SafeAreaView>
+    </View>
+    </View>
 </>
   )
 }
@@ -34,20 +56,19 @@ export default TaskCalendar
 
 const styles = StyleSheet.create({
   container:{
-    justifyContent: 'center',
-    alignContent: 'center',
-    paddingBottom: 40,
     height: '100%',
-    height: '95%',
+    //width: '95%',
+    justifyContent: 'space-between'
   },
   cal:{
-    borderWidth: 2,
+    //borderWidth: 2,
     borderRadius: 10,
     width: '95%',
-    justifyContent: 'center',
-    padding:20,
-    alignSelf: 'center'
-
+    marginBottom: 300,
+    alignSelf: 'center',
+  },
+  center:{
+    
   }
   
 })
