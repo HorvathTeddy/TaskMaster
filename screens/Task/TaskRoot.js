@@ -40,12 +40,10 @@ const TaskRoot = ({navigation}) => {
 
   return (
      
-    
-    
-   //<ScrollView contentContainerStyle={{ flexDirection:"column" }}>
-    <View >
+
+    <View>
     <ScrollView >
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, paddingBottom :'200%' }}>
         {loading && <Text>Loading</Text>}
         {!loading && (
           <View style={styles.tasks}>

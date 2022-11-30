@@ -22,7 +22,7 @@ const HomeScreen = ({ navigation }) => {
    return    (  
        <ImageBackground
        style={styles.background}
-       source={require('../../assets/checklist.png')}>
+       source={require('../../assets/checklist5.png')}>
  
            <View style={styles.logoContainer}>
                <Text style={styles.textLogo}>Tasks-R-Us</Text>
@@ -58,18 +58,18 @@ const styles = StyleSheet.create({
    signUpView: {
        width: "100%",
        height: 70,
-       backgroundColor: "#fd9ca2",
+       backgroundColor: "#ebffff",
        justifyContent: 'center'
    },
    loginView: {
        width: "100%",
        height: 70,
-       backgroundColor: "#afe9e4",
+       backgroundColor: "#d3eaff",
        justifyContent: 'center'
    },
    textLogo:{
        fontSize: 55,
-       top: 25,
+       top: 0,
        fontWeight: "bold"
    },
    SUbutton: {
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
        height: 70,
        alignItems: "center",
        padding:'3.5%',
-       backgroundColor: "#fc5c65",
+       backgroundColor: "#fbe472",
        justifyContent: 'center',
    },
    Lbutton: {
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
        height: 70,
        alignItems: "center",
        padding:'3.5%',
-       backgroundColor: "#4ecdc4",
+       backgroundColor: "#66c1fc",
        justifyContent: 'center'
    },
    text: {

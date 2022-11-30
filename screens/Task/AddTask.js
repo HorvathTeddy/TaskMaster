@@ -3,7 +3,6 @@ import React, {useState} from "react";
 import axios from 'axios';
 import Btn from '../../components/Btn'
 import StdButton from "../../components/Standards/StdButton";
-//import axios from '../../axios.js'
 
 const AddTask = ({navigation: {goBack}}) => {
   const [name, setName] = useState('');
@@ -17,7 +16,7 @@ const AddTask = ({navigation: {goBack}}) => {
         return
       }
     axios.post("http://localhost:8080/tasks", {
-      id: taskId,
+      //id: taskId,
       name: name,
       description: description,
       date: date
@@ -46,7 +45,7 @@ const AddTask = ({navigation: {goBack}}) => {
 
       <View style={styles.addTaskBUT}>
         <Btn
-          style={{backgroundColor:'#1999e1', paddingLeft: 10,}}
+          style={{backgroundColor:'#1999e1', paddingLeft: 10}}
           title="Add Task"
           mode='contained'
           onPress={handleSubmit}       
