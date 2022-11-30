@@ -1,15 +1,23 @@
 import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import axios from 'axios'
 
-const Checkbox = ({completed, isCompleted}) => {
+const Checkbox = () => {
 
-const [checked, isChecked] = React.useState(completed);
+const [completed, isComplete] = useState()
+const [checked, isChecked] = useState(completed);
 
-const handlePress = () => {
-    console.log(completed)
-    isCompleted(!completed);
+const handlePress = async () => {
+    // console.log(!completed)
+    isComplete(!completed);
     isChecked(!checked);
+    axios.put("https://taskmaster-api.onrender.com/tasks", 
+    {
+        _id:"63794af89351280df47bca83",
+        completed: completed,
+       
+    })
 }
 
   return (

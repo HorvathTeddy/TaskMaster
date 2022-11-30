@@ -17,7 +17,6 @@ const AddTask = ({navigation: {goBack}}) => {
         return
       }
     axios.post("https://taskmaster-api.onrender.com/tasks", {
-      id: taskId,
       name: name,
       description: description,
       date: date
