@@ -16,7 +16,7 @@ const AddTask = ({navigation: {goBack}}) => {
         alert('All fields are required')
         return
       }
-    axios.post("http://localhost:8080/tasks", {
+    axios.post("https://taskmaster-api.onrender.com/tasks", {
       id: taskId,
       name: name,
       description: description,
