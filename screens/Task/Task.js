@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity} from "react-native";
 import React from "react";
+import Checkbox from "../../components/Checkbox/Checkbox";
 
 /*
 This program sets up the task app that Task so the tasks are shown all
@@ -16,11 +17,7 @@ const Task = ({route}) => {
         <Text style={styles.taskText}>Description: {description}</Text>
         <Text style={styles.taskText}>Due Date: {dueDate}</Text>
         <View style={styles.taskStatus}>
-
-          <View style={styles.circleShape} />
-          <View style={styles.circleShape} />
-          <View style={styles.circleShape} />
-          <View style={styles.circleShape} />
+          <Text style={styles.complete}> Complete?</Text><Checkbox> </Checkbox>
     </View>
     </View>
       
@@ -57,16 +54,14 @@ const styles = StyleSheet.create({
   },
   taskStatus: {
     flexDirection: "row",
+    paddingBottom: 20
     // justifyContent: "left",
   },
-  circleShape: {
-    margin: 5,
-    width: 20,
-    height: 20,
-    borderRadius: 20 / 2,
-    backgroundColor: "green",
+  complete:{
+    fontSize: 18,
+    paddingTop: 5,
+    paddingRight: 5
   },
-  
 //new stuff
   container: {
     alignSelf: "center",
