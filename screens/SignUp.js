@@ -61,8 +61,8 @@ export default function SignUpScreen({ navigation }) {
 
     return <View style={styles.view}>
         <Text style={{ fontSize: 34, fontWeight: "800", marginBottom: 20 }}>Sign Up</Text>
-        <TextBox placeholder="Full Name" onChangeText={text => handleChange(text, "name")} />
-        <TextBox placeholder="Email Address" onChangeText={text => handleChange(text, "email")} />
+        <TextBox placeholder="Full Name:     ex. John Doe" onChangeText={text => handleChange(text, "name")} />
+        <TextBox placeholder="Email Address:       ex. johnDoe@gmail.com" onChangeText={text => handleChange(text, "email")} />
         <TextBox placeholder="Role (type admin, manager, or employee)" onChangeText={text => handleChange(text, "role")} />
         <TextBox placeholder="Password" secureTextEntry={true}  onChangeText={text => handleChange(text, "pwd")}/>
         <TextBox placeholder="Confirm Password" secureTextEntry={true}  onChangeText={text => handleChange(text, "pwd2")}/>

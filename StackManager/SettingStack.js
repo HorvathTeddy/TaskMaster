@@ -20,4 +20,4 @@ const SettingsStack = (props) => {
   );
 };
 
-export default LoginStack;
+export default SettingsStack;

@@ -7,7 +7,7 @@ const TaskCalendar = () => {
   return (
     <>
     <SafeAreaView style={styles.container}>
-      <View style={{backgroundColor: 'lightblue ', }}>
+      <View style={{backgroundColor: 'lightblue '}}>
       <Text style={{fontSize: 30, justifyContent: 'center', alignSelf: 'center',
                     }}>Calender</Text>
       </View>
@@ -34,17 +34,16 @@ export default TaskCalendar
 
 const styles = StyleSheet.create({
   container:{
-    flexGrow:1,
     justifyContent: 'center',
     alignContent: 'center',
     paddingBottom: 40,
-    height: '100%'
+    height: '100%',
+    height: '95%',
   },
   cal:{
     borderWidth: 2,
     borderRadius: 10,
     width: '95%',
-    //height: '95%',
     justifyContent: 'center',
     padding:20,
     alignSelf: 'center'
