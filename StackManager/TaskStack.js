@@ -7,6 +7,7 @@ import firebase from 'firebase/app';
 import "firebase/auth";
 import "firebase/firestore"
 import axios from "axios";
+import Task from '../screens/Task/Task'
 
 const Stack = createNativeStackNavigator();
 
@@ -43,14 +44,17 @@ useEffect(() => {
     <>
     {user?.role === "Manager" ? 
       <Stack.Navigator
-        //screenOptions={{headerTitleAlign: 'center'}}
         initialRouteName="TaskRoot"
         screenOptions={{
           headerStyle: {
-            backgroundColor: "#4169e1",
+            backgroundColor: "#1999e1",
           },
           headerTitleAlign: 'center',
-          headerTitleStyle: { fontSize: 30, fontWeight: "bold", color: 'white' },
+          headerTitleStyle: { 
+            fontSize: 30, 
+            fontWeight: "bold", 
+            color: 'white' 
+          },
       }}
     >
       <Stack.Screen
@@ -63,29 +67,56 @@ useEffect(() => {
               <Text style={styles.plus}>+</Text>
             </TouchableOpacity>
           ),
-          title: "Tasks List"
+          title: "Tasks"
         })}
       />
-      <Stack.Screen name="AddTask" component={AddTask} options={{
-          title: "Add a Task"
+      <Stack.Screen 
+        name="AddTask" 
+        component={AddTask} 
+        options={{
+          title: "Add a Task",
+          headerBackTitleStyle:{fontSize: 25, color: 'white'},
+          headerTintColor: '#fff',
+          
         }}/>
+      <Stack.Screen 
+        name="Task" 
+        component={Task}
+        options={{
+          title: "Assigned Task",
+          headerBackTitleStyle:{fontSize: 25},
+          headerTintColor: '#fff',
+      }} />
     </Stack.Navigator> : <Stack.Navigator
-      //screenOptions={{headerTitleAlign: 'center'}}
       initialRouteName="TaskRoot"
       screenOptions={{
         headerStyle: {
           backgroundColor: "#4169e1",
         },
         headerTitleAlign: 'center',
-        headerTitleStyle: { fontSize: 30, fontWeight: "bold", color: 'white' },
-        title: "Tasks List"
+        headerTitleStyle: { 
+          fontSize: 30, 
+          fontWeight: "bold", 
+          color: 'white' 
+        },
+        title: "Tasks", 
+
       }}
     >
       <Stack.Screen
         style={styles.screen}
         name="TaskRoot"
         component={TaskRoot}
+        
         />
+      <Stack.Screen 
+        name="Task" 
+        component={Task} 
+        options={{
+          title: "Assigned Task",
+          headerBackTitleStyle:{fontSize: 20},
+          headerTintColor: '#fff',
+      }} />
     </Stack.Navigator>}
     </>
   );
@@ -93,8 +124,7 @@ useEffect(() => {
 
 const styles = StyleSheet.create({
   plus: {
-    // marginTop: '-15px',
-    fontSize: 40,
+    fontSize: 55,
     zIndex: -1,
     color: 'white',
     opacity: 0.75
@@ -103,13 +133,16 @@ const styles = StyleSheet.create({
   },
   screen: {
     title: 'Centered',
-    headerTitleAlign: 'center'
+    headerTitleAlign: 'center', 
   },
   addTask: {
     height: 50,
     width: 120,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingRight: 40,
+    marginTop: -30,
+
   }
 });
 

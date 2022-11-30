@@ -1,7 +1,8 @@
 import { View, StyleSheet, TextInput, Button } from "react-native";
 import React, {useState} from "react";
-import axios from 'axios'
-//import axios from '../../axios.js'
+import axios from 'axios';
+import Btn from '../../components/Standards/StdButton'
+import StdButton from "../../components/Standards/StdButton";
 
 const AddTask = ({navigation: {goBack}}) => {
   const [name, setName] = useState('');
@@ -14,7 +15,7 @@ const AddTask = ({navigation: {goBack}}) => {
         alert('All fields are required')
         return
       }
-    axios.post("http://10.0.2.2:8080/tasks", {
+    axios.post("https://taskmaster-api.onrender.com/tasks", {
       name: name,
       description: description,
       date: date
@@ -30,22 +31,23 @@ const AddTask = ({navigation: {goBack}}) => {
   return (
     
     <View style={styles.container}>
-      <TextInput placeholder="Enter a task name" value={name} onChangeText={(text) => setName(text)}></TextInput>
-      <TextInput placeholder="Enter a task description" value={description} onChangeText={(text) => setDescription(text)}></TextInput>
-      <TextInput placeholder="Enter a task due date" value={date} onChangeText={(text) => setDate(text)}></TextInput>
-      {/* <Entry title="Due Date"></Entry>
-      <Entry title="Note"></Entry>
+      <TextInput style={styles.taskName} placeholder="Enter a task name" value={name} onChangeText={(text) => setName(text)}></TextInput>
+      <TextInput 
+        multiline={true}
+        numberOfLines={10}
+        style={styles.description}  
+        placeholder="Enter a description" 
+        value={description} 
+        onChangeText={(text) => setDescription(text)}>
+      </TextInput>
+      <TextInput style={styles.taskName} placeholder="Enter a due date ex. 2023-03-01" value={date} onChangeText={(text) => setDate(text)}></TextInput>
 
-      <Entry title="ice cream"></Entry> */}
-
-      <View style={styles.addTask}>
-        <Button
+      <View style={styles.addTaskBUT}>
+        <StdButton
+          style={{backgroundColor:'#1999e1', paddingLeft: 10,}}
           title="Add Task"
           mode='contained'
-          onPress={ 
-                           handleSubmit}
-            //navigation.navigate("TaskRoot")
-          
+          onPress={handleSubmit}       
         />
       </View>
     </View>
@@ -55,11 +57,46 @@ const AddTask = ({navigation: {goBack}}) => {
 const styles = StyleSheet.create({
   container: {
     alignSelf: "center",
-    width: "80%",
+    alignItems: "center",
+    width: "95%",
+    borderWidth: 1,
+    borderRadius: 10, 
+    borderColor: '#555555', 
+    backgroundColor: '#ffffff', 
+    justifyContent: 'center',
+    marginTop: 50,
+    paddingTop:10,
   },
-  addTask: {
-    // alignItems: "center",
+  addTaskBUT: {
+    padding: 20,
+    
   },
+
+  taskName: {
+    width: '90%',
+    fontSize: 20,
+    margin: 20,
+    padding: 20,
+    borderWidth: 1,
+    borderRadius: 10, 
+  },
+  description: {
+    width: '90%',
+    fontSize: 20,
+    margin: 20,
+    padding: 20,
+    borderWidth: 1,
+    borderRadius: 10, 
+    height:200,
+    textAlignVertical: 'top',
+  }, 
+  dueDate:{
+    flex: 1
+  }
+
+
+
+
 });
 
 export default AddTask;

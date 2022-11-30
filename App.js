@@ -11,7 +11,19 @@ import Settings from './screens/Settings'
 import "firebase/auth";
 import "firebase/firestore"
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { firebaseConfig } from './firebase';
+//import { firebaseConfig } from './firebase';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyARevRsdkfIpx7xX_B15hvt2QfoNLuJFuc",
+  authDomain: "taskware-4c383.firebaseapp.com",
+  databaseURL: "https://taskware-4c383-default-rtdb.firebaseio.com",
+  projectId: "taskware-4c383",
+  storageBucket: "taskware-4c383.appspot.com",
+  messagingSenderId: "819553804592",
+  appId: "1:819553804592:web:90714144074abbd4cca8f5"
+};
+
+
 
 const Tab = createBottomTabNavigator();
 
