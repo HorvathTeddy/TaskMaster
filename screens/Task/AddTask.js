@@ -1,7 +1,7 @@
 import { View, StyleSheet, TextInput, Button } from "react-native";
 import React, {useState} from "react";
 import axios from 'axios';
-import Btn from '../../components/Standards/StdButton'
+import Btn from '../../components/Btn'
 import StdButton from "../../components/Standards/StdButton";
 //import axios from '../../axios.js'
 
@@ -44,8 +44,8 @@ const AddTask = ({navigation: {goBack}}) => {
       <TextInput style={styles.taskName} placeholder="Enter a due date ex. 2023-03-01" value={date} onChangeText={(text) => setDate(text)}></TextInput>
 
       <View style={styles.addTaskBUT}>
-        <StdButton
-          style={{width: '80%',}}
+        <Btn
+          style={{backgroundColor:'#1999e1', paddingLeft: 10,}}
           title="Add Task"
           mode='contained'
           onPress={handleSubmit}       
@@ -69,10 +69,12 @@ const styles = StyleSheet.create({
     paddingTop:10,
   },
   addTaskBUT: {
-    padding: 20,
-
-  },
-
+      color: '#1999e1',
+      bottom:0,
+      paddingBottom: 30,
+      width: '50%',
+      alignSelf: 'center',
+    },
   taskName: {
     width: '90%',
     fontSize: 20,
@@ -91,12 +93,6 @@ const styles = StyleSheet.create({
     height:200,
     textAlignVertical: 'top',
   }, 
-  dueDate:{
-    flex: 1
-  }
-
-
-
 
 });
 

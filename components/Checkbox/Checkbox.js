@@ -35,8 +35,9 @@ const styles = StyleSheet.create({
         borderWidth: 2,
     },
     text: {
-        fontSize: 20,
-        textAlign: 'center'
+        fontSize: 33,
+        textAlign: 'center', 
+        //paddingTop: 1
     }
 })
 
